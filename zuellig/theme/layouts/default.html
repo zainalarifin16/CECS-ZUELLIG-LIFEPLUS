@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<!-- Avoid FOUC issue in FF with async loading of style sheets -->
+		<style> body { opacity: 0; }</style>
+
+		<title></title>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="_scs_theme_root_/designs/_scs_design_name_/design.css">
+		<link rel="stylesheet" href="_scs_theme_root_/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+		<!--$SCS_RENDER_INFO-->
+		<!--$SCS_SITE_HEADER-->
+		<!--$SCS_PAGE_HEADER-->
+	</head>
+
+	<body>
+		<!-- Needed to override the default Sites Theme styles -->
+		<link rel="stylesheet" href="_scs_theme_root_/assets/css/styles.css">
+
+		<!-- Add the header into this layout page -->
+		<includeHTML urlPrefix="_scs_theme_root_" includeFile="/assets/html/header.html"></includeHTML>
+
+		<div class="header-banner scs-slot" id="header-banner">
+		</div>
+
+		<div class="heading scs-slot scs-responsive" id="heading">
+		</div>
+
+		<div class="content scs-slot scs-responsive" id="content">
+		</div>
+
+		<!-- Add the footer into this layout page -->
+		<includeHTML urlPrefix="_scs_theme_root_" includeFile="/assets/html/footer.html"></includeHTML>
+
+		<!-- Main JavaScript -->
+		<script type="text/javascript" src="_scs_theme_root_/assets/plugins/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="_scs_theme_root_/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="_scs_theme_root_/assets/js/includeHTML.js"></script>
+		<script data-main="/_sitescloud/renderer/renderer.js" src="/_sitescloud/renderer/require.js"></script>
+
+		<!--$SCS_PAGE_FOOTER-->
+		<!--$SCS_SITE_FOOTER-->
+
+		<!-- Avoid FOUC issue in FF with async loading of style sheets -->
+		<style> body { opacity: 1; }</style>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="col-sm-6 col-lg-12" style="padding: 0px;" >
+    {{#render.items}}
+    {{#blog-post_title}}
+    <span class="title-blog-list" ><h1 style="font-size: 25px;" >{{blog-post_title}}</h1></span>
+    {{/blog-post_title}}
+    {{#image}}
+    <div style="background-image: url('{{image}}');background-repeat: no-repeat;background-size: auto 350px;min-height: 300px;background-color: #ffffff;" ></div>
+    {{/image}}
+    
+    {{/render.items}}
+    <div class="action-blog" >
+        <button class="social-button twitter-icon" ></button>
+        <button class="social-button facebook-icon" ></button>
+        <button class="social-button share-icon" ></button>
+        <a href="{{scsData.detailPageLink}}" class="read-more" >Read More ...</a>
+    </div>
+</div>

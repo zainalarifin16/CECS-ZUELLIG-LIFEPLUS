@@ -1,0 +1,186 @@
+<!-- 
+/**
+ * Confidential and Proprietary for Oracle Corporation
+ *
+ * This computer program contains valuable, confidential, and
+ * proprietary information.  Disclosure, use, or reproduction
+ * without the written authorization of Oracle is prohibited.
+ * This unpublished work by Oracle is protected by the laws
+ * of the United States and other countries.  If publication
+ * of this computer program should occur, the following notice
+ * shall apply:
+ *
+ * Copyright (c) 2017 Oracle Corp.
+ * All rights reserved.
+ *
+ *
+ * This code is for DEMO ONLY, and does not support translation per 
+ * locale, and not tested for accessibility. 
+ * 
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+		<title>Navigation Menu</title>
+
+		<!-- include apps styling -->
+		<link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+		
+		<!-- include supporting files -->
+		<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+		<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+		<!-- include Sites SDK -->
+		<script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+		
+		<style>
+			.settings-select, .settings-input {
+				margin-bottom: 10px;
+			}
+			.settings-label, .settings-description {
+				display: inline-block;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+			.settings-text-box {
+				max-width: 310px;
+				margin-bottom: 10px;
+			}
+			.checkbox-settings-box {
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+
+	<body style="margin:0px; padding:0px;">
+		<!-- ko if: initialized -->	
+		<div class="scs-component-settings">	
+			<div class="checkbox-settings-box">
+				<input id="externalSiteEnabled" type="checkbox" data-bind="checked: externalSiteEnabled" />
+				<label for="externalSiteEnabled" class="settings-label">Enable External Site Navigation</label>
+			</div>
+			<!-- ko if: externalSiteEnabled -->
+			<div class="settings-box">
+				<label for="menu1" class="settings-heading">Menu 1</label>
+				<input id="menu1" data-bind="value: menu1" class="settings-text-box"/>
+				<label for="externalUrl1" class="settings-heading">External Site URL 1</label>
+				<input id="externalUrl1" data-bind="value: externalUrl1" class="settings-text-box"/>
+				<label for="menu2" class="settings-heading">Menu 2</label>
+				<input id="menu2" data-bind="value: menu2" class="settings-text-box"/>
+				<label for="externalUrl2" class="settings-heading">External Site URL 2</label>
+				<input id="externalUrl2" data-bind="value: externalUrl2" class="settings-text-box"/>
+				<label for="menu3" class="settings-heading">Menu 3</label>
+				<input id="menu3" data-bind="value: menu3" class="settings-text-box"/>
+				<label for="externalUrl3" class="settings-heading">External Site URL 3</label>
+				<input id="externalUrl3" data-bind="value: externalUrl3" class="settings-text-box"/>				
+			</div>
+			<!-- /ko -->
+		</div>
+		<!-- /ko -->
+		<!-- ko ifnot: initialized -->
+		<div data-bind="text: 'Waiting for initialization to complete.'"></div>
+		<!-- /ko -->
+
+		<script type="text/javascript">
+			
+			// Set the iFrame height when we've fully rendered
+			ko.bindingHandlers.scsCompComponentImpl = {
+				init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+					var body = document.body,
+						html = document.documentElement;
+
+					SitesSDK.setHeight(Math.max(
+						body.scrollHeight,
+						body.offsetHeight,
+						html.clientHeight,
+						html.scrollHeight,
+						html.offsetHeight));
+				}
+			};
+			
+			var SettingsViewModel = function () {
+				var self = this;
+				
+				// component specific settings
+				self.externalSiteEnabled = ko.observable();
+				self.menu1 = ko.observable();
+				self.externalUrl1 = ko.observable();
+				self.menu2 = ko.observable();
+				self.externalUrl2 = ko.observable();
+				self.menu3 = ko.observable();
+				self.externalUrl3 = ko.observable();
+				
+				// create rest of viewModel
+				self.initialized = ko.observable(false);
+				self.saveData = false;
+				
+				// Get custom settings
+				SitesSDK.getProperty('customSettingsData', function (data) {
+					//console.log("+++++ GETPROPERTY ++++, data = ", JSON.stringify(data));
+					
+					// Update observables from custom settings
+					self.externalSiteEnabled(data.hasOwnProperty('externalSiteEnabled') ? data.externalSiteEnabled : false);
+					if (data.hasOwnProperty('externalSites')) {
+						if (data.externalSites.length >= 1) {
+							self.menu1(data.externalSites[0].hasOwnProperty('name') ? data.externalSites[0].name : '');
+							self.externalUrl1(data.externalSites[0].hasOwnProperty('url') ? data.externalSites[0].url : '');
+						}
+						if (data.externalSites.length >= 2) {
+							self.menu2(data.externalSites[1].hasOwnProperty('name') ? data.externalSites[1].name : '');
+							self.externalUrl2(data.externalSites[1].hasOwnProperty('url') ? data.externalSites[1].url : '');
+						}
+						if (data.externalSites.length >= 3) {
+							self.menu3(data.externalSites[2].hasOwnProperty('name') ? data.externalSites[2].name : '');
+							self.externalUrl3(data.externalSites[2].hasOwnProperty('url') ? data.externalSites[2].url : '');
+						}
+					}
+					
+					// Note that viewModel is initialized and can start saving data
+					self.initialized(true);
+					self.saveData = true;
+				});
+				
+				// Save custom settings
+				self.save = ko.computed(function () {
+					var saveConfig = {
+						'externalSiteEnabled': self.externalSiteEnabled()						
+					};
+					if (self.externalSiteEnabled()) {
+						var extSites = [];
+						if (self.menu1() || self.externalUrl1()) {
+							extSites.push({
+								'name': self.menu1(),
+								'url': self.externalUrl1()
+							})
+						}
+						if (self.menu2() || self.externalUrl2()) {
+							extSites.push({
+								'name': self.menu2(),
+								'url': self.externalUrl2()
+							})
+						}
+						if (self.menu3() || self.externalUrl3()) {
+							extSites.push({
+								'name': self.menu3(),
+								'url': self.externalUrl3()
+							})
+						}
+						saveConfig.externalSites = extSites;
+					}
+					//console.log(self.saveData ? "========== TO SAVE config: " : "saveConfig: ", JSON.stringify(saveConfig));
+					
+					if (self.saveData) {
+						SitesSDK.setProperty('customSettingsData', JSON.parse(JSON.stringify(saveConfig)));
+					}
+				}, self);
+
+			};
+			
+			ko.applyBindings(new SettingsViewModel());
+		</script>
+
+	</body>
+</html>

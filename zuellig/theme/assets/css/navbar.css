@@ -1,0 +1,223 @@
+/*  Header Styles */
+.header {
+	/*background: #244b55;*/
+	background: #A5DDEF;
+	height: 100px;
+}
+
+.logo {
+	padding-left: 8vw;
+}
+
+.logocontainer {
+	display: flex;
+	height: 100px;
+	align-items: center;
+	width: 200px;	
+}
+
+/*  Overrides scs auto height formatting that causes content to push off screen in edit mode */
+.logocontainer.scs-slot-empty {
+    height: 100px;
+    min-height: 100px;
+	margin:0;
+}
+
+.logocontainer .scs-watermark-image {
+    margin: 5px auto;
+}
+
+.usercontainer {
+    min-height: 30px;
+    height: 30px;
+    min-width: 200px;
+}
+
+.header {
+	margin: 0;
+}
+
+.menucontainer {
+	margin-top: 30px;
+}
+
+.menucontainer .scs-row {
+	position: relative;
+	top: -70px;
+}
+
+.currentUser {
+    height: 30px;
+    min-height: 30px;
+    padding-right: 14px;
+	margin-right: 8vw;
+}
+
+.userArea {
+    color: #FFFFFF;
+}
+
+@media (max-width: 991px) {
+    .header a:link,
+    .header a:visited {
+        color: #FFF;
+    }
+
+    .userContainer {
+        padding-right: 0;
+    }
+
+	.currentUser {
+		padding-right: 0;
+		margin-right: 28px;
+	}
+}
+
+@media (max-width: 767px) {
+	.header,
+	.logocontainer,
+	.logo {
+		height:68px;
+	}
+
+	.logo { 
+		padding-left: 1px;
+	}
+
+	.logocontainer {
+	    margin-left: 20px;
+	}
+
+	.logocontainer.scs-slot-empty {
+	    height: 43px;
+	    min-height: 43px;
+		margin:0;
+	}
+
+	.currentUser {
+		margin-right: 15px;	
+	}
+}
+
+@media (max-width: 414px) {
+	.currentUser {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 374px) {
+	#welcomeMessage {
+		display: none;
+	}	
+}
+
+/* Customization of NavMenu component */
+.dropdown-menu {
+	background: #366b78;
+	color: #ffffff;
+}
+
+.nav > li > a {
+	color: #ffffff;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav > li > a:active,
+.nav > li.curfocus {
+	background: #366b78;
+	color: #2D525C;
+}
+
+.dropdown-menu > li.current > a,
+.dropdown-menu > li.currParent > a,
+.nav > li.currParent > a,
+.nav > li.currTop > a,
+.nav > li.current > a {
+	color: #000000;
+}
+
+.dropdown-menu > li.current > a,
+.dropdown-menu > li.currParent > a {
+	color: #f0d5b1;
+	background: #4e8897;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:active  {
+	background: #4e8897;
+	color: #f0d5b1;
+}
+
+.navbar-nav > li > a {
+	color: #000000;
+	font-weight: 700;
+}
+
+.navbar-toggle {
+	color: #ffffff;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+	background: inherit;
+	color: #f0d5b1;
+}
+
+@media (max-width: 991px) {
+	/*Keep same hamburger mode font sizes as in the original PresentTheme*/
+	.navbar-nav > li > a {
+		font-size: 14px;
+	}
+	.dropdown-menu > li > a { 
+		font-size: 13px;
+	}
+	
+	.nav > li.currTop > a {
+		color: #000000;
+	}
+
+	.nav > li.current > a,
+	.nav > li.currParent > a {
+		color: #000000;
+		background: #4e8897;
+	}
+
+	.navbar-nav {
+		background: #366b78;
+	}
+
+	.navbar-nav > li > a:hover {
+		color: #f0d5b1;
+		background: #4e8897;
+	}
+
+	.dropdown-menu > li > a { 
+		color: #ffffff;
+	}
+
+	.dropped {
+		color: #f0d5b1;
+	}
+}
+
+@media (min-width: 992px) {
+	.dropdown-menu > li > a {
+		color: #ffffff;
+	}
+
+	.navbar-nav > .open > a,
+	.navbar-nav > .open > a:hover,
+	.navbar-nav > .open > a:focus {
+		color: #ffffff;
+	}
+
+	.nav > li.curfocus > a {
+		color: #ffffff !important;
+	}
+
+	.dropdown-menu li.dropdown-submenu:hover > a {
+		color: #f0d5b1;
+		background: #4e8897;
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"id": "CurrentUser",
+	"settingsData": {
+		"settingsHeight": 150,
+		"settingsWidth": 300,
+		"settingsRenderOption": "dialog"
+	},
+	"initialData": {
+		"componentId": "currentUser",
+		"componentName": "Current User Component",
+		"componentLayout": "default",
+		"customSettingsData": {},
+		"nestedComponents": []
+	}
+}

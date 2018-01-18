@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="40px" viewBox="0 0 160 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>502B18B9-374A-4E29-810C-82A97F694248</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0.603921569" y="0.179397928" width="159" height="39.6412041" rx="19.8206021"></rect>
+        <circle id="path-2" cx="13" cy="13" r="13"></circle>
+        <filter x="-18.8%" y="-11.2%" width="137.7%" height="137.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="0.9" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Lifeplus-Landing-page" transform="translate(-853.000000, -1197.000000)">
+            <g id="EXPLAINER" transform="translate(0.000000, 768.000000)">
+                <g id="explainer-content" transform="translate(290.000000, 73.000000)">
+                    <g id="POINT-CONVERSION*" transform="translate(563.000000, 356.000000)">
+                        <g id="Rectangle-10">
+                            <use fill-opacity="0.49000001" fill="#003A48" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <rect stroke="#C2D62F" stroke-width="1" x="1.10392157" y="0.679397928" width="158" height="38.6412041" rx="19.3206021"></rect>
+                        </g>
+                        <g id="coin_small" transform="translate(18.501961, 6.617978)">
+                            <g id="coin">
+                                <g id="Oval" stroke-linecap="square">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                    <use stroke="#FFDD5D" stroke-width="1.8" fill="#FFC900" fill-rule="evenodd" xlink:href="#path-2"></use>
+                                </g>
+                                <path d="M18.0367652,7.64332174 C18.9451872,8.41578937 19.3993913,9.60228185 19.3993913,11.2028348 C19.3993913,12.8033877 18.9328279,13.9744311 17.999687,14.716 C17.0665461,15.4575689 15.6421371,15.8283478 13.7264174,15.8283478 L12.0022783,15.8283478 L12.0022783,19.4434783 L9.11017391,19.4434783 L9.11017391,6.48462609 L13.6893391,6.48462609 C15.6792157,6.48462609 17.1283433,6.87085411 18.0367652,7.64332174 Z M15.9140348,12.7415826 C16.2601003,12.3522589 16.4331304,11.7837313 16.4331304,11.0359826 C16.4331304,10.2882339 16.2075733,9.75678418 15.7564522,9.44161739 C15.3053311,9.1264506 14.603941,8.96886957 13.6522609,8.96886957 L12.0022783,8.96886957 L12.0022783,13.3255652 L13.948887,13.3255652 C14.9129266,13.3255652 15.5679693,13.1309063 15.9140348,12.7415826 Z" id="P" fill="#FFAA36"></path>
+                            </g>
+                        </g>
+                        <g id="Group-6" transform="translate(54.000000, 13.000000)" font-size="14" font-family="Raleway-Bold, Raleway" fill="#FFFFFF" font-weight="bold">
+                            <text id="1PT=-$5-HKD">
+                                <tspan x="0" y="13">1PT= $5 HKD</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

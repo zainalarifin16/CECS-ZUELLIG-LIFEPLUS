@@ -1,0 +1,33 @@
+<script type="text/html" id="submenu-template">
+	<li data-bind="css: classes">
+		<a class="dropdown-toggle" data-hover="dropdown" data-bind="attr: {href: destination, target: target}, text: label"></a>
+
+		<!-- ko if: $data.submenus().length -->
+		<ul class="dropdown-menu" data-bind="template: {name: 'submenu-template', foreach: $data.submenus}"></ul>
+		<!-- /ko -->
+	</li>
+</script>
+
+<!-- ko if: initialized -->
+<div class="navcontainer">
+	<nav class="main-nav" role="navigation">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>
+			</button>
+		</div>
+
+		<div class="collapse navbar-collapse navbar-responsive-collapse width" id="topnav">
+			<ul class="nav navbar-nav" data-bind="foreach: navMenus">
+				<li data-bind="css: classes">
+					<a class="dropdown-toggle" data-hover="dropdown" data-bind="attr: {href: destination, target: target}, text: name"></a>
+					<!-- ko: if submenus().length -->
+					<ul class="dropdown-menu" data-bind="template: {name: 'submenu-template', foreach: submenus}"></ul>
+					<!-- /ko -->
+				</li>
+			</ul>
+		</div>
+	</nav>		
+</div>
+<!-- /ko -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="444px" viewBox="0 0 1440 444" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>curve corner hero</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="hero-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -324.000000)">
+        <g id="hero-2-*" fill="#C2D62F">
+            <g id="hero-2">
+                <path d="M1440,764.12134 L1440,768.925234 L0,768.925234 L0,323.536746 C4.54747351e-13,464.796076 246.115898,733.733247 698.363516,764.12134 C828.734067,772.881391 1285.21567,764.05502 1440,764.12134 Z" id="curve-corner-hero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

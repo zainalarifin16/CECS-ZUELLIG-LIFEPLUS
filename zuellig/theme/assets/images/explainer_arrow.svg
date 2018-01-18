@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1129px" height="612px" viewBox="0 0 1129 612" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFE400" offset="0%"></stop>
+            <stop stop-color="#99FF77" offset="51.1260364%"></stop>
+            <stop stop-color="#00D9C5" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="19.861824 282.790781 773.200041 282.790781 831.71397 298.790781 773.200041 314.790781 19.861824 314.790781 45.1737469 298.790781"></polygon>
+        <filter x="-5.2%" y="-103.1%" width="110.3%" height="362.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="9" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.33 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="animation_arrow-*-copy" transform="translate(425.787897, 298.790781) rotate(-29.000000) translate(-425.787897, -298.790781) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <!-- <polygon id="animation_arrow-*-copy-3" fill="#000000" transform="translate(815.188116, 346.210475) rotate(-29.000000) translate(-815.188116, -346.210475) " points="794.114772 330.210475 832.326187 330.210475 836.261459 362.210475 794.114772 362.210475 819.426695 346.210475"></polygon>
+            <polygon id="animation_arrow-*-copy-2" fill="#000000" transform="translate(974.345672, 238.177973) rotate(-29.000000) translate(-974.345672, -238.177973) " points="945.088707 222.177973 1003.60264 238.177973 945.088707 254.177973"></polygon> -->
+        </g>
+    </g>
+</svg>

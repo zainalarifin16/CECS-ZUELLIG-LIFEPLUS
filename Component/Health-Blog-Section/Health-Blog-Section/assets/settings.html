@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>Sample Section Layout Settings</title>
+
+		<!-- include sample apps styling -->
+		<link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+		<!-- include supporting files -->
+		<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+		<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+		<!-- include the Sites SDK -->
+		<script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+	</head>
+	<body data-bind="visible: true" style="display:none; margin:0px; padding:0px;background:transparent;background-image:none;">
+		<!-- ko if: initialized() -->
+		<div class="scs-component-settings form-inline">
+			<hr/>
+			<div class="settings-box">
+				<label id="maxItemsLabel" for="maxItems" class="settings-heading" data-bind="text: 'Maximum Number of Items'"></label>
+				<input id="maxItems" class="settings-input" data-bind="value: maxItems"></input>
+			</div>
+		</div>
+		<div data-bind="setSettingsHeight: true"></div>
+		<!-- /ko -->
+		<!-- ko ifnot: initialized() -->
+		<div data-bind="text: 'waiting for initialization to complete'"></div>
+		<!-- /ko -->
+		<script type="text/javascript">
+
+			// set the iFrame height when we've fully rendered
+			ko.bindingHandlers.scsCompComponentImpl = {
+				init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+					var body = document.body,
+						html = document.documentElement;
+
+					SitesSDK.setHeight(Math.max(
+						body.scrollHeight,
+						body.offsetHeight,
+						html.clientHeight,
+						html.scrollHeight,
+						html.offsetHeight));
+				}
+			};
+
+			// define the viewModel object
+			var SettingsViewModel = function () {
+				var self = this;
+
+				// create the observables for passing data
+				self.maxItems = ko.observable();
+
+				// create rest of viewModel
+				self.initialized = ko.observable(false);
+				self.saveData = false;
+
+				// Get custom settings
+				SitesSDK.getProperty('customSettingsData', function (data) {
+					//update observable
+					self.maxItems(data.maxItems || '');
+
+					// note that viewModel is initialized and can start saving data
+					self.initialized(true);
+					self.saveData = true;
+				});
+
+
+				// save whenever any updates occur
+				self.save = ko.computed(function () {
+					var saveconfig = {
+						'maxItems': parseInt( self.maxItems() ) || 0
+					};
+
+					// save data in page
+					if (self.saveData) {
+						SitesSDK.setProperty('customSettingsData', saveconfig);
+					}
+				}, self);
+			};
+
+
+			// apply the bindings
+			ko.applyBindings(new SettingsViewModel());
+		</script>
+	</body>

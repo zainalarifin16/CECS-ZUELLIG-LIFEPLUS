@@ -1,0 +1,23 @@
+<div class="col-sm-12 col-lg-12" style="padding: 0px;" >
+    <div id="headline-health-blog-area" >
+        <hr class="hr-headline-health-blog" />
+        {{#render.items}}
+        {{#blog-post_title}}
+            <span class="title-headline-health-blog" ><h1>{{blog-post_title}}</h1></span>
+        {{/blog-post_title}}
+        {{#blog-post_summary}}
+            <span class="summary-headline-health-blog" ><h3>{{blog-post_summary}}</h3></span>
+        {{/blog-post_summary}}
+        {{#image}}
+        <div class="image-headline-health-blog" style="background-image: url('{{image}}');" >
+        </div>
+        {{/image}}
+        {{/render.items}}
+    </div>
+    <div class="action-blog" >
+        <button class="social-button twitter-icon" ></button>
+        <button class="social-button facebook-icon" ></button>
+        <button class="social-button share-icon" ></button>
+        <a href="{{scsData.detailPageLink}}" class="read-more" >Read More ...</a>
+    </div>
+</div>

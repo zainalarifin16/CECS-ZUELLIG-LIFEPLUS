@@ -1,0 +1,145 @@
+<!-- 
+/**
+ * Confidential and Proprietary for Oracle Corporation
+ *
+ * This computer program contains valuable, confidential, and
+ * proprietary information.  Disclosure, use, or reproduction
+ * without the written authorization of Oracle is prohibited.
+ * This unpublished work by Oracle is protected by the laws
+ * of the United States and other countries.  If publication
+ * of this computer program should occur, the following notice
+ * shall apply:
+ *
+ * Copyright (c) 2017 Oracle Corp.
+ * All rights reserved.
+ *
+ *
+ * This code is for DEMO ONLY, and does not support translation per 
+ * locale, and not tested for accessibility. 
+ * 
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+	<title>Current User Settings</title>
+	
+	<!-- include apps styling -->
+	<link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+		
+	<!-- include supporting files -->
+	<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+	<script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+	<!-- include Sites SDK -->
+	<script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+	
+	<style>
+
+	    	div.table{
+	           display:table; 
+	           padding:5px;
+	        }
+	    
+	        div.table-cell{
+	           display:table-cell;
+	           padding:5px;
+	           color: white;
+	           text-align: center;
+	           vertical-align:middle;
+	        }
+	        
+	        div.spacer{
+	           display:table-cell;
+	        }
+	    
+	   </style>		
+</head>
+<body style="margin:0px; padding:0px;">
+	<!-- ko if: initialized() -->	
+	<div class="scs-component-settings">	
+		<div id="settings-box-id" class="settings-box" tabindex="-1">
+
+		  <div class="box-content">
+			<form role="form">
+				<div class="form-group table">	
+					<div class="table-cell">
+					  <label for="avatarOption" class="settings-heading">Avatar?</label>
+					</div>
+					<div class="table-cell" style="padding-left:20px"> 
+					  <select id="avatarOption" data-bind="options: displayAvatar, value: selectedAvatarOption"></select>
+					</div>		
+				</div>
+
+				<div class="form-group table">	
+					<div class="table-cell">
+					  <label for="welcome-text" class="settings-heading">Message</label>
+					</div>
+					<div class="table-cell" style="padding-left:10px; width: 100%;"> 
+					  <input id="welcome-text" class="settings-text-box" data-bind="value: welcomeMessage"/>
+					</div>		
+				</div>
+				
+			</form>
+
+		  </div>
+
+		</div>
+	</div>
+	<!-- /ko -->
+	<!-- ko ifnot: initialized() -->
+	<div data-bind="text: 'Waiting for initialization to complete.'"></div>
+	<!-- /ko -->
+	
+	<script>
+		// Default OSN instance
+		var default_display_avatar = 'true';
+		var default_welcome_message = 'Welcome ';
+        
+		function SettingsViewModel(config) {
+			var self = this;
+			
+			self.welcomeMessage = ko.observable();
+			self.displayAvatar = ko.observableArray(['true','false']);
+			self.selectedAvatarOption = ko.observable();
+						
+			self.initialized = ko.observable(false);
+			self.saveData = false;
+			
+			// Get custom settings
+			SitesSDK.getProperty('customSettingsData', function (data) {
+				//update observable
+                self.welcomeMessage(data.hasOwnProperty('welcomeMessage') ? data.welcomeMessage : default_welcome_message);
+				self.selectedAvatarOption(data.hasOwnProperty('displayAvatar') ? data.displayAvatar : default_display_avatar);
+
+		        // note that viewModel is initialized and can start saving data
+				self.initialized(true);
+				self.saveData = true;						
+			});
+			
+			self.save = ko.computed(function () {
+				//save
+				var saveconfig = { 
+						'displayAvatar': self.selectedAvatarOption(),
+						'welcomeMessage': self.welcomeMessage()
+					};
+
+				//dispatch config to app
+				if (self.saveData) {
+					SitesSDK.setProperty('customSettingsData', saveconfig);
+					//console.log("Saved settings: "+ saveconfig);
+				}
+				
+			}, self);
+
+		}; //end of view model
+
+        ko.applyBindings(new SettingsViewModel());
+	
+	</script>
+	
+</body>
+</html>

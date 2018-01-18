@@ -1,0 +1,129 @@
+.blog-details {
+	color: black;
+    font-weight: 400;
+}
+
+.blog-details .button-wrapper {
+	background: #bb0000;
+	border-width: 0;
+    padding-left: 3.6vw;
+    padding-right: 3.6vw;
+    padding-top: 1.2vw;
+    padding-bottom: 1.4vw;
+    font-size: 1.9vw;
+    line-height: 1.2;
+	letter-spacing: 1px;
+	margin-left: -.7vw;
+    margin-top: 2.1vw;
+    display: inline-block;	
+
+	-webkit-transform: skewX(-15deg);
+	-moz-transform: skewX(-15deg);
+	transform: skewX(-15deg);
+}
+
+.blog-details .button {
+	color: white;
+
+	-webkit-transform: skewX(15deg);
+	-moz-transform: skewX(15deg);
+	transform: skewX(15deg);
+}
+
+.blog-details .document {
+    margin: 0 auto;
+    max-width: 1200px;
+	background: rgba(251, 251, 251, 0.8);
+	border-width: 1px;
+	border-color: #a8a8a8;
+	border-style: solid;
+}
+
+.blog-details .contentItem {
+	width: 100%;
+	padding-left: 3.43vw;
+    padding-right: 3.43vw;
+    padding-bottom: 1.37vw;
+}
+
+.blog-details .date {
+	font-size: 2.1vw;
+    line-height: 1.1;
+	padding-top: 5.5vw;	
+	color: #666666;
+}
+
+.blog-details .name {
+	font-size: 4.4vw;
+    line-height: 1.1;
+	padding-top: 1.5vw;	
+}
+
+.blog-details .description {
+	font-size: 2.2vw;
+    padding-top: 1.1vw;
+}
+
+.blog-details .content {
+	font-size: 1.2vw;
+    padding-top: 3vw;
+	color: #333333;
+}
+
+@media (min-width: 1500px) {
+	.blog-details .contentItem {
+		padding-left: 51.45px;
+		padding-right: 51.45px;
+		padding-bottom: 20.55px;
+	}
+
+	.blog-details .date {
+		font-size: 31.5px;
+		padding-top: 82.5px;
+	}
+
+	.blog-details .name {
+		font-size: 66px;
+		padding-top: 22.5px;
+	}
+
+	.blog-details .description {
+		font-size: 33px;
+		padding-top: 16.5px;
+	}
+
+	.blog-details .content {
+		font-size: 18px;
+		padding-top: 45px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.blog-details .content {
+		font-size: 13.2px;
+	}
+}
+
+@media (max-width: 767px) {
+	.blog-details .button-wrapper {
+		padding-left: 27.612px;
+		padding-right: 27.612px;
+		padding-top: 9.204px;
+		padding-bottom: 10.738px;
+		font-size: 14.573px;
+		margin-left: -5.369px;
+		margin-top: 16.107px;
+	}
+
+	.blog-details .date {
+		font-size: 16.107px;
+	}
+
+	.blog-details .name {
+		font-size: 33.748px;
+	}
+
+	.blog-details .description {
+		font-size: 16.874px;
+	}
+}

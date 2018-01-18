@@ -1,0 +1,230 @@
+/* Main Theme Styles */
+.scs-component-content {
+	font-size: 14px;
+	font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+.scs-title-text {
+	font-size: 24px;
+}
+.background .scs-image-image {
+    min-width: 400px;
+	overflow-x: hidden;
+}
+.content .scs-paragraph-text {
+	font-size: 14px;
+	line-height: 22px;
+	color: #666;
+}
+.services .scs-paragraph-text,
+.contact .scs-paragraph-text {
+	font-size: 16px;
+    line-height: 26px;
+}
+.person .scs-title-text {
+	color: #244b55;
+}
+.person .scs-paragraph-text {
+    line-height: 20px;
+	color: #666;	
+}
+.scs-button-button {
+	width: 135px;	
+	background: #4e8897;
+}
+.scs-button .scs-button-button {
+	padding: 10px;
+}
+
+/* Generic Link Styles */
+a,
+a:visited {
+    color: #bd8842;
+}
+a:hover,
+a:focus {
+	color: #244b55;
+	text-decoration: none;	
+}
+/* Button Link Styles */
+.scs-button a,
+.scs-button a:visited {
+	color: #f0d5b1;	
+}
+
+.services .scs-button a:link,
+.services .scs-button a:visited {
+	color: #FFF;	
+}
+
+.scs-button a:hover,
+.scs-button a:focus,
+.services .scs-button a:hover,
+.services .scs-button a:active {
+	color: #244b55;
+}
+
+/*  Footer Styles */
+footer {
+	margin-top: 49px;
+	background: #ffffff;
+	height: 176px;
+	padding: 0 10.5vw;
+	display: table;
+	width:100%;
+}
+
+.footer {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.footer .scs-title-text {
+	font-family: arial;
+    font-size: 14px;
+	color: white;
+	text-align: right;
+}
+
+/* Additional Misc Styles */
+body {
+	margin: 0;
+}
+.overlay {
+	position: absolute;
+    top: 12%;
+    left: 55%;
+    width: 40%;
+    z-index: 99;
+}
+.heading,
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.heading {
+    margin-bottom: 10px;
+}
+.overlay-container {
+	position:relative;
+    margin-bottom: 50px;
+	/* TODO: This breaks edit mode but is needed to crop the image on the home page in smaller resolutions */
+    /*overflow-x: hidden;*/
+	/* Use this to crop the image from the center */
+	/*	overflow-x: hidden;	
+		min-width: 500px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100.2%;	*/
+}
+.person {
+    margin: 16px 0;
+}
+
+
+
+.services .scs-button-button {
+	width:100%;
+	padding:30px;
+	font-size: 26px;
+	color:#FFF;
+}
+.scs-button .scs-button-text {
+	white-space: normal;	
+}
+.services .scs-title-text {
+    font-size: 26px;
+    text-align: center;
+	padding:30px;
+	background-color: #d3c36e;
+}
+.contact {
+	max-width: 900px;
+}
+.heading .scs-title-text,
+.heading .scs-paragraph-text {
+    text-align: center;
+}
+
+.person .scs-image-image {
+	min-width: 256px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+	/* a hack to fix rounding error with translate */
+	width: 100.2%;	
+}
+
+
+/* Make the title font size responsive for the overlay*/
+.overlay .scs-title-text,
+.heading .scs-title-text {
+	font-size: 4.9vw;
+	font-weight: 100;	/* Thin */
+	line-height: 1;
+	color: #244b55;	
+	/* Needed for the font in order to prevent scrollbars because the line-height is being set */
+    padding-bottom: 1.4vw;	
+}
+.overlay .scs-paragraph-text {
+	font-size: 1.8vw;
+	line-height: 1.1;
+	font-weight: lighter;
+	color: #366b78;
+	/* Needed for the font in order to prevent scrollbars because the line-height is being set */
+    padding-bottom: .5vw;
+}
+.heading .scs-paragraph-text {
+	font-size: 1.8vw;
+	line-height: 1.2;	
+	font-weight: lighter;	
+	color: #366b78;
+	/* Needed for the font in order to prevent scrollbars because the line-height is being set */
+    padding-bottom: .5vw;
+}
+.heading .scs-title-text {
+	padding-bottom: .9vw;
+}
+
+/* Switch into phone layout mode */
+@media (max-width: 767px) {
+	.overlay {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 30px;
+	}
+	.overlay .scs-paragraph-text {
+		line-height: 22px;
+	}	
+}
+
+@media (max-width: 900px) {
+	.overlay .scs-title-text,
+	.heading .scs-title-text	{
+		font-size: 42px;
+		padding-bottom: 10px;		
+	}
+
+	/*  Footer Styles */
+	.scs-socialbar,
+	.footer .scs-title-text  {
+		text-align: center !important;
+	}
+	footer {
+		padding: 8.5vw 10.5vw;
+	}
+	.scs-socialbar {
+		padding-bottom: 25px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.overlay .scs-paragraph-text,
+	.heading .scs-paragraph-text {
+		font-size: 20px;
+		padding-bottom: 3px;		
+	}
+}

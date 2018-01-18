@@ -1,0 +1,21 @@
+{
+  "type": "sectionlayout",
+
+  "initialData":
+  {
+    "components": [],
+    "customSettingsData":
+    {
+      "maxItems": 4
+    }
+  },
+
+  "settingsData":
+  {
+    "settingsWidth": 330,
+    "settingsHeight": 330,
+    "settingsRenderOption": "panel"
+  },
+
+  "hasEditHandlers": true
+}

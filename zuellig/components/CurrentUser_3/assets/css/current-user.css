@@ -1,0 +1,24 @@
+div.userArea{ 
+   display: inline-block; 
+}
+
+div.userAvatar{
+   display: inherit;
+   vertical-align:middle;
+}
+
+div.welcomeMsg {
+	display: inherit;
+}
+
+div.userName {
+   display: inherit;
+}
+
+img.userAvatarImage{
+   display: inherit;
+   text-align: center;
+   vertical-align:middle;
+   width: 60px;
+   height: 60px;
+}
