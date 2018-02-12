@@ -1,0 +1,29 @@
+/*  Footer Styles */
+footer {
+	height: 100px;
+	padding: 0 2vw;
+	display: table;
+	width:100%;
+}
+.footer {
+	display: table-cell;
+	vertical-align: middle;
+}
+.footer .scs-title-text {
+	font-family: arial;
+    font-size: 14px;
+	text-align: right;
+}
+
+@media (max-width: 767px) {
+	/*  Footer Styles */
+	.scs-socialbar,
+	.footer .scs-image {
+		text-align: center !important;
+	}
+	
+	.footer .scs-image .scs-image-image {
+		width: 60%;
+	    margin: 1vw 0;
+	}
+}

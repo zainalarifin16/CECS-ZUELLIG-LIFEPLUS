@@ -1,0 +1,65 @@
+/* Main Theme Styles */
+body {
+	margin: 0;
+	font-size: 14px;
+	font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+.content {
+	max-width: 1380px;
+	margin: 0 auto;
+    padding: 0 15px;	
+}
+/* TODO: Keep the footer from showing up at the top of the page because the other components have not yet been loaded */
+/*.headline {
+//	min-height: 2000px;	
+}*/
+.blog-content {
+	margin-top: -9vw;
+    padding: 0 4vw;	
+}
+a,
+a:visited {
+    color: #bd8842;
+}
+a:hover,
+a:focus {
+	color: #244b55;
+	text-decoration: none;	
+}
+
+/* SCS Styles */
+.scs-title-text {
+	font-size: 24px;
+}
+.scs-button-button {
+	width: 135px;	
+	background: #4e8897;
+}
+.scs-button .scs-button-button {
+	padding: 10px;
+}
+.scs-button .scs-button-text {
+	white-space: normal;	
+}
+.scs-button a,
+.scs-button a:visited {
+	color: #f0d5b1;	
+}
+.scs-button a:hover,
+.scs-button a:focus {
+	color: #244b55;
+}
+
+/* Hack to get section layouts not to have spacing between the elements */
+.scs-sectionlayout .scs-component-container {
+    margin-top: -.1px;
+    margin-bottom: -.1px;
+}
+
+/* Hack to get the image to fill the entire area during reposive resizing */
+.image-fill {
+    margin-left: -.6px;
+    width: calc(100% + 1.2px);
+    margin-top: -.6px;
+    margin-bottom: -.6px;
+}

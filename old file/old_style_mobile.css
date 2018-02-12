@@ -1,0 +1,1001 @@
+/* Android 400 x 700 */
+
+@media only screen 
+  and (min-device-width: 400px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    
+    .container-fluid{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    .container{
+      width: 101%; 
+      padding-left: 14px;
+    }
+
+    #logo_company{
+      width: 120px!important;
+    }
+
+    #container_menu{
+      padding-left: 0px!important;
+      padding-right: 0px!important;
+    }
+
+    #nav_menu{
+      padding-left: 10px!important;
+      padding-right: 10px!important; 
+    }
+
+    #search_btn{
+      right: 75px!important;
+      top: 16px!important;
+    }
+
+    .carousel_image{
+      width: 375px;
+      height: 395px;
+    }
+
+    #curve_header{
+      height: 162px;
+      margin-top: -160px;
+    }
+
+    #container_explainer{
+      width: 377px;
+      height: 308px;
+      object-fit: contain;
+    }
+
+    #frame_explainer{
+      width: 902px;
+      height: 210px;
+      object-fit: contain;
+      background-repeat: no-repeat;
+      margin-top: 70px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      border-radius: 4px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .explainer-logo-lp {
+      width: 60px;
+      top: 10px;
+      left: 10px;
+    }
+
+    .explainer-text-top-right{
+      top: 10px;
+      right: 10px;
+      font-size: 10px;
+    }
+
+    .explainer-text-bottom-left{
+      bottom: 0px;
+      left: 5px;
+      font-size: 10px;
+    }
+
+    .explainer-text-bottom-right{
+      bottom: 0px;
+      right: 10px;
+      font-size: 16px;
+    }
+
+    .explainer-arrow{
+      margin-top: -5px;
+      margin-left: 0px;
+      width: 400px;
+    }
+
+    .explainer-coin-1{
+      bottom: 40px;
+      left: 55px;
+      width: 30px;
+    }
+
+    .explainer-coin-2{
+      bottom: 75px;
+      left: 115px;
+      width: 30px;
+    }
+
+    .explainer-gift-box{
+      top: 60px;
+      right: 110px;
+      width: 40px;
+    }
+
+    .explainer-people{
+      top: 25px;
+      right: 55px;
+      width: 30px;
+    }
+
+    .explainer-text-complete{
+      bottom: 70px;
+      left: 12px;
+      font-size: 6px;
+    }
+
+    .explainer-text-reward{
+      top: 50px;
+      left: 115px;
+      font-size: 8px;
+    }
+
+    .explainer-text-connecting{
+      bottom: -10px;
+      margin-left: -75px;
+    }
+
+    .explainer-connection-header{
+      margin-left: 30px;
+      font-size: 10px;
+    }
+
+    .explainer-connection-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-health-plus{
+      top: 55px;
+      right: 5px;
+    }
+
+    .explainer-health-header{
+      font-size: 10px;
+    }
+
+    .explainer-health-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-gift {
+      bottom: 70px;
+      right: 70px;
+    }
+
+    .explainer-gift-header{
+      font-size: 10px;
+    }
+
+    .explainer-gift-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-engaging {
+      bottom: 40px;
+      left: 120px;
+    }
+
+    .explainer-engaging-header{
+      font-size: 10px;
+    }
+
+    .explainer-engaging-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-point-conversion{
+      bottom: 25px;
+      right: 10px;
+    }
+
+    .img-point-conversion{
+      width: 100px;
+    }
+
+    /* BLOG SECTION */
+    .health-blog-section{
+      width: auto!important;
+    }
+
+    .health-blog-title{
+      background-color: #00495a;
+      margin: 0px -15px 10px -15px;
+      padding: 5px;
+    }
+
+    #headlineHealthBlog{
+      padding-left: 10px!important;
+      padding-right: 10px!important;
+    }
+
+    /* FORUM SECTION */
+
+    .forum-title{
+      background-color: #00495a;
+      padding: 5px;
+      margin-top: 10px;
+      width: 100%;
+      position: absolute!important;
+      font-weight: 700;
+      color: #ffffff;
+      right: 0px;
+      left: 0px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .area-forum{
+      margin: 80px 0px 50px 0px;
+    }
+
+    .thread-box{
+      max-height: none;
+    }
+
+    .area-thread-starter{
+      width: 30%;
+    }
+
+    .area-thread-starter.thread-starter{
+      margin-left: -10px;
+    }
+
+    .area-content-thread{
+      padding-left: 0px;
+      width: 70%;
+    }
+
+    .forum-column{
+      padding-right: 35px;
+    }
+
+    /* Redeem Point */
+
+    #coin_bg{
+      width: auto;
+    }
+
+    #layer_redeem_point{
+      padding-top: 115px;
+      padding-left: 0px;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    #redeem_point{
+      font-size: 28px;
+    }
+
+    #sub_redeem_point{
+      font-size: 15px;
+    }
+
+    .bg-e-shop{
+      padding: 40px 0px 0px 0px;
+    }
+
+    .slick-prev{
+      display: none;
+    }
+
+    .slick-next{
+      display: none;
+    }
+
+    .title-section{
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-section > img{
+      width: 35px;
+      padding-bottom: 10px;
+    }
+
+    .title-section.fixed {
+      position: fixed!important;
+      top: 0;
+      z-index: 10;
+    }
+    .title-section.fixed.absolute {
+      position: absolute;
+    }
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    
+    .container-fluid{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    .container{
+      width: 100%;
+    }
+
+    #logo_company{
+      width: 120px!important;
+    }
+
+    #container_menu{
+      padding-left: 0px!important;
+      padding-right: 0px!important;
+    }
+
+    #nav_menu{
+      padding-left: 10px!important;
+      padding-right: 10px!important; 
+    }
+
+    #search_btn{
+      right: 75px!important;
+      top: 16px!important;
+    }
+
+    /* Carousel */
+
+    .container-carousel-1{
+      right: 10%;
+    }
+
+    .img-acheivement{
+      width: 50%;
+    }
+
+    .carousel_text_3{
+      width: 350px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .carousel_image{
+      width: 375px;
+      height: 395px;
+    }
+
+    #curve_header{
+      height: 162px;
+      margin-top: -160px;
+    }
+
+    #container_explainer{
+      width: 377px;
+      height: 308px;
+      object-fit: contain;
+    }
+
+    #frame_explainer{
+      width: 902px;
+      height: 210px;
+      object-fit: contain;
+      background-repeat: no-repeat;
+      margin-top: 70px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      border-radius: 4px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .explainer-logo-lp {
+      width: 60px;
+      top: 10px;
+      left: 10px;
+    }
+
+    .explainer-text-top-right{
+      top: 10px;
+      right: 10px;
+      font-size: 10px;
+    }
+
+    .explainer-text-bottom-left{
+      bottom: 0px;
+      left: 5px;
+      font-size: 10px;
+    }
+
+    .explainer-text-bottom-right{
+      bottom: 0px;
+      right: 10px;
+      font-size: 16px;
+    }
+
+    .explainer-arrow{
+      margin-top: -5px;
+      margin-left: 0px;
+      width: 400px;
+    }
+
+    .explainer-coin-1{
+      bottom: 40px;
+      left: 55px;
+      width: 30px;
+    }
+
+    .explainer-coin-2{
+      bottom: 75px;
+      left: 115px;
+      width: 30px;
+    }
+
+    .explainer-gift-box{
+      top: 60px;
+      right: 110px;
+      width: 40px;
+    }
+
+    .explainer-people{
+      top: 25px;
+      right: 55px;
+      width: 30px;
+    }
+
+    .explainer-text-complete{
+      bottom: 70px;
+      left: 12px;
+      font-size: 6px;
+    }
+
+    .explainer-text-reward{
+      top: 50px;
+      left: 115px;
+      font-size: 8px;
+    }
+
+    .explainer-text-connecting{
+      bottom: -10px;
+      margin-left: -75px;
+    }
+
+    .explainer-connection-header{
+      margin-left: 30px;
+      font-size: 10px;
+    }
+
+    .explainer-connection-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-health-plus{
+      top: 55px;
+      right: 5px;
+    }
+
+    .explainer-health-header{
+      font-size: 10px;
+    }
+
+    .explainer-health-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-gift {
+      bottom: 70px;
+      right: 70px;
+    }
+
+    .explainer-gift-header{
+      font-size: 10px;
+    }
+
+    .explainer-gift-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-engaging {
+      bottom: 40px;
+      left: 120px;
+    }
+
+    .explainer-engaging-header{
+      font-size: 10px;
+    }
+
+    .explainer-engaging-detail{
+      font-size: 5px;
+    }
+
+    .explainer-text-point-conversion{
+      bottom: 25px;
+      right: 10px;
+    }
+
+    .img-point-conversion{
+      width: 100px;
+    }
+
+    /* BLOG SECTION */
+    .health-blog-section{
+      width: auto!important;
+    }
+
+    .health-blog-title{
+      background-color: #00495a;
+      margin: 0px -15px 10px -15px;
+      padding: 5px;
+    }
+
+    #headlineHealthBlog{
+      padding-left: 10px!important;
+      padding-right: 10px!important;
+    }
+
+    /* FORUM SECTION */
+
+    .forum-title{
+      background-color: #00495a;
+      padding: 5px;
+      margin-top: 10px;
+      width: 100%;
+      position: absolute!important;
+      font-weight: 700;
+      color: #ffffff;
+      right: 0px;
+      left: 0px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .area-forum{
+      margin: 80px 0px 50px 0px;
+    }
+
+    .thread-box{
+      max-height: none;
+    }
+
+    .area-thread-starter{
+      width: 30%;
+    }
+
+    .area-thread-starter.thread-starter{
+      margin-left: -10px;
+    }
+
+    .area-content-thread{
+      padding-left: 0px;
+      width: 70%;
+    }
+
+    .forum-column{
+      padding-right: 35px;
+    }
+
+    /* Redeem Point */
+
+    #coin_bg{
+      width: auto;
+    }
+
+    #layer_redeem_point{
+      padding-top: 115px;
+      padding-left: 0px;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    #redeem_point{
+      font-size: 28px;
+    }
+
+    #sub_redeem_point{
+      font-size: 15px;
+    }
+
+    .bg-e-shop{
+      padding: 40px 0px 0px 0px;
+    }
+
+    .slick-prev{
+      display: none;
+    }
+
+    .slick-next{
+      display: none;
+    }
+
+    .title-section{
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-section > img{
+      width: 35px;
+      padding-bottom: 10px;
+    }
+
+    .title-section.fixed {
+      position: fixed!important;
+      top: 0;
+      z-index: 10;
+    }
+    .title-section.fixed.absolute {
+      position: absolute;
+    }
+
+}
+
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .carousel_image{
+      width: 812px;
+    }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    #logo_company{
+      width: 140px;
+    }
+
+    #navbarsExample09{
+      margin-left: -110px;
+    }
+
+    #search_btn{
+      right: -30px;
+    }
+
+    #btn_country{
+      right: 40px!important;
+    }
+
+    #btn_login{
+      right: -30px!important;
+    }
+
+    #list_country{
+      padding-top: 8px;
+    }
+
+    #form_login{
+      right: -30px;
+    }
+
+    .carousel_image{
+      width: 768px;
+    }
+
+    .container-carousel-1{
+      right: 5%;
+    }
+
+    .carousel_text_1{
+      margin-top: 0px;
+    }
+
+    .area_carousel_text{
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.5);
+      min-height: 315px;
+      width: 550px;
+      padding: 35px;
+      margin-top: 100px;
+      margin-bottom: 30px;
+
+    }
+
+    .carousel_text_1{
+      font-size: 50px;
+    }
+
+    .container-fluid{
+      margin-left: -25px;
+    }
+
+    #curve_header{
+      margin-top: -435px;
+    }
+
+    #container_explainer{
+      width: 770px;
+    }
+
+    .explainer-text-complete{
+      bottom: 205px;
+      left: 25px;
+      font-size: 15px;
+    }
+
+    .explainer-arrow{
+      margin-top: -15px;
+      margin-left: -40px;
+      width: 1000px;
+      transform: rotate(-7deg);
+    }
+
+    .explainer-coin-1{
+      bottom: 105px;
+      left: 90px;
+      width: 70px;
+    }
+
+    .explainer-text-connecting{
+      bottom: 60px;
+      left: 120px;
+      margin-left: 50px;
+    }
+
+    .explainer-coin-2 {
+      bottom: 220px;
+      left: 250px;
+      width: 70px;
+    }
+
+    .explainer-text-bottom-right {
+      bottom: 10px;
+      right: 25px;
+    }
+    .explainer-text-reward{
+      left: 270px;
+    }
+    .explainer-people{
+      top: 50px;
+      right: 100px;
+    }
+    .explainer-gift-box {
+      top: 160px;
+      right: 240px;
+      width: 120px;
+    }
+    .explainer-text-gift{
+      bottom: 230px;
+    }
+
+    .explainer-text-engaging {
+      bottom: 160px;
+      left: 280px;
+    }
+    .explainer-text-point-conversion {
+      bottom: 120px;
+      right: 90px;
+    }
+
+    /* Health Blog Section */
+    .health-blog-section{
+      width: 770px;
+    }
+
+    .image-headline-health-blog{
+      max-height: 200px;
+    }
+
+    #headline-health-blog-area{
+      height:200px;
+    }
+
+    #coin_bg{
+      width: 770px;
+    }
+
+    #eshop_background{
+      width: 770px!important;
+    }
+
+    .thread-component{
+      width: 50%;
+    }
+
+    .thread-box{
+      max-height: 140px;
+    }
+
+    .area-forum{
+      margin: 50px 0px 50px -110px;
+      width: 770px;
+    }
+
+    .shop-item{
+      width: 210px;
+    }
+
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait){
+
+    #logo_company{
+      width: 140px;
+    }
+
+    #navbarsExample09{
+      margin-left: -110px;
+    }
+
+    #search_btn{
+      right: -30px;
+    }
+
+    #btn_country{
+      right: 40px!important;
+    }
+
+    #btn_login{
+      right: -30px!important;
+    }
+
+    #list_country{
+      padding-top: 8px;
+    }
+
+    #form_login{
+      right: -30px;
+    }
+
+    .carousel_image{
+      width: 768px;
+    }
+
+    .container-carousel-1{
+      right: 5%;
+    }
+
+    .carousel_text_1{
+      margin-top: 0px;
+    }
+
+    .area_carousel_text{
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.5);
+      min-height: 315px;
+      width: 550px;
+      padding: 35px;
+      margin-top: 100px;
+      margin-bottom: 30px;
+
+    }
+
+    .carousel_text_1{
+      font-size: 50px;
+    }
+
+    .container-fluid{
+      margin-left: -25px;
+    }
+
+    #curve_header{
+      margin-top: -435px;
+    }
+
+    #container_explainer{
+      width: 770px;
+    }
+
+    .explainer-text-complete{
+      bottom: 205px;
+      left: 25px;
+      font-size: 15px;
+    }
+
+    .explainer-arrow{
+      margin-top: -15px;
+      margin-left: -40px;
+      width: 1000px;
+      transform: rotate(-7deg);
+    }
+
+    .explainer-coin-1{
+      bottom: 105px;
+      left: 90px;
+      width: 70px;
+    }
+
+    .explainer-text-connecting{
+      bottom: 60px;
+      left: 120px;
+      margin-left: 50px;
+    }
+
+    .explainer-coin-2 {
+      bottom: 220px;
+      left: 250px;
+      width: 70px;
+    }
+
+    .explainer-text-bottom-right {
+      bottom: 10px;
+      right: 25px;
+    }
+    .explainer-text-reward{
+      left: 270px;
+    }
+    .explainer-people{
+      top: 50px;
+      right: 100px;
+    }
+    .explainer-gift-box {
+      top: 160px;
+      right: 240px;
+      width: 120px;
+    }
+    .explainer-text-gift{
+      bottom: 230px;
+    }
+
+    .explainer-text-engaging {
+      bottom: 160px;
+      left: 280px;
+    }
+    .explainer-text-point-conversion {
+      bottom: 120px;
+      right: 90px;
+    }
+
+    /* Health Blog Section */
+    .health-blog-section{
+      width: 770px;
+    }
+
+    .image-headline-health-blog{
+      max-height: 200px;
+    }
+
+    #headline-health-blog-area{
+      height:200px;
+    }
+
+    #coin_bg{
+      width: 770px;
+    }
+
+    #eshop_background{
+      width: 770px!important;
+    }
+
+    .thread-component{
+      width: 50%;
+    }
+
+    .thread-box{
+      max-height: 140px;
+    }
+
+    .area-forum{
+      margin: 50px 0px 50px -110px;
+      width: 770px;
+    }
+
+    .shop-item{
+      width: 210px;
+    }
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .carousel_image{
+      width: 1024px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1440px;
+    }
+    #container_lifeplus{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+}

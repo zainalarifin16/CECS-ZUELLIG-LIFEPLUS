@@ -1,0 +1,28 @@
+.dynContentMenu {
+    margin: 0 0;
+}
+
+a.dynContentMenuItem {
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    line-height: 1.3333333;
+    position: relative;
+    text-decoration:none;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background: none;
+}
+
+a.dynContentMenuItem:hover,
+a.dynContentMenuItem:focus,
+a.dynContentMenuItem:active {
+    color: #bc0807 !important;
+}
+
+.dynContentMenu span.current a.dynContentMenuItem {
+    border: 2px solid #bc0807;
+    color: #bc0807 !important;
+}

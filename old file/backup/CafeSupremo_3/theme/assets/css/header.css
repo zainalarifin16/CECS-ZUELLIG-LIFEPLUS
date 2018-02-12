@@ -1,0 +1,566 @@
+.navbar-nav {
+    margin-right: 2vw;
+    float:right;
+}
+
+.dropdown-menu {
+    background: #bc0807; /*#366b78*/
+    color: #FFF;
+    font-size: 16px;
+}
+
+.nav > li > a {
+    color: #FFF;
+}
+
+.nav > li > a:hover, 
+.nav > li > a:focus,
+.nav > li > a:active,
+.nav > li.curfocus,
+.nav > li.currDropdownTop {
+    background: #bc0807; /*#366b78*/
+    color: #ffffff !important; /*#f0d5b1*/
+}
+
+.nav > li.currDropdownTop > a {
+    color: #ffffff !important; /*#f0d5b1*/
+	font-weight: 600;
+}
+
+.dropdown-menu > li.current > a,
+.dropdown-menu > li.currParent > a,
+.nav > li.currParent > a,
+.nav > li.currTop > a,
+.nav > li.current > a {
+    color: #bc0807;  /*black*/
+    font-weight: 600;
+}
+
+.dropdown-menu > li.current > a,
+.dropdown-menu > li.currParent > a {
+    background: #dbc3c3; /*#4e8897*/
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:active  {
+    background: #dbc3c3; /*#4e8897*/
+    color: #ffffff; /*#f0d5b1*/
+}
+
+/*  Header Styles */
+.header {
+	height: 100px;
+}
+
+.main-nav { 
+    position:static;       
+    right: 0;
+    z-index: 1001;
+}
+
+.navcontainer {
+    padding: 0 20px 0 0;
+}
+
+.logo {
+	padding-left: 2vw;
+}
+
+.logocontainer {
+	display: flex;
+	height: 100px;
+	align-items: center;
+	width: 100%;	
+}
+
+/*  Overrides scs auto height formatting that causes content to push off screen in edit mode */
+.logocontainer.scs-slot-empty {
+    height: 100px;
+    min-height: 100px;
+	margin:0;
+}
+
+.logocontainer .scs-watermark-image {
+    margin: 5px auto;
+}
+
+.usercontainer {
+    min-height: 30px;
+    height: 30px;
+    min-width: 200px;
+}
+
+.searchcontainer {
+	position: absolute;
+	right: 10px;
+	padding-top: 53px;
+	max-width: 30px;
+}
+
+.searchcontainer.scs-slot-empty {
+    height: 30px;
+    min-height: 30px;
+	margin:0;
+	min-width: 30px;
+}
+
+.header .logo,
+.header .search {
+	z-index: 1005; /* bring logo image and search icon above main-nav in hamburger mode so they are clickable */
+}
+.header .col-xs-1 {
+	padding-left: 0;
+}
+
+.scs-edit-mode .header .logo,
+.scs-edit-mode .header .search {
+	z-index: auto;
+}
+.scs-edit-mode .searchcontainer {
+	max-width: none;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.navbar-collapse {
+    top:0;
+    background:transparent;
+    width: auto !important;
+}
+
+.header {
+	margin: 0;
+}
+
+.dropdown-menu {
+    padding: 0;
+    border: none;
+}
+
+.navbar-nav > li {
+    float: left;
+}
+
+.navbar-nav > li > a {
+	color: black;
+    font-weight: 600;	
+}
+
+.navbar-toggle {
+    font-size: 19px;
+    margin: 50px 34px 20px;
+    padding: 1px 0 0 0;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+    background: inherit;
+	color: #bc0807;
+}
+
+.navbar-collapse.collapse.width {
+    height: auto;
+    -webkit-transition: width 0.35s ease;
+    -moz-transition: width 0.35s ease;
+    -o-transition: width 0.35s ease;
+    transition: width 0.35s ease;
+}
+
+.dropdown-submenu { 
+	position: relative; 
+}
+
+.dropdown-submenu > a:after {
+	top: 5px;
+    right: 15px;
+    font-size: 20px;
+    content: "\25ba";
+    position: absolute;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.currentUser {
+    height: 30px;
+    min-height: 30px;
+    padding-right: 14px;
+	margin-right: 2vw;
+}
+.currentUser.scs-slot-empty {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.userArea {
+    font-weight: bold;
+}
+
+.navbar-collapse {
+	padding: 0;
+}
+
+.navbar-nav > li > a {
+	padding: 24px 1.5vw;
+	font-size: 16px;
+	margin-top: 2px;
+}
+
+.dropdown-menu { 
+	border-radius: 0;
+	z-index: 900 !important; /* Change z-index to less than 1000, so slot and component context menus can work */
+}
+.blocks>li {
+	width: 160px;
+}
+
+
+@media (max-width: 860px) {
+	.content-menu {
+		display: none !important; /* turn off content dropdown menus in hamburger mode */
+	}
+
+	.navbar-nav > li > a {
+        padding: 24px 18px;
+		margin-top: 0px;
+    }
+
+	.dropdown-menu {
+		font-size: 14px;
+	}
+
+	.logocontainer {
+		width: 200px;
+	}
+
+	.searchcontainer {
+		position: absolute;
+		right: 0;
+		padding-top: 33px;
+	}
+	
+	.nav > li.current > a,
+	.nav > li.currParent > a {
+        background: #dbc3c3;
+    }
+
+    .main-nav {
+        position: absolute;
+    }
+
+    .navbar {
+        margin-top: 10px;
+    }
+
+    .header a:link,
+    .header a:visited {
+        color: #FFF;
+    }
+
+    /*Responsive code for max-width: 991px*/
+    .navbar-header {
+        float: none;
+		padding-right: 20px;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 1000;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-collapse.collapse.in {
+        display: block !important;
+        overflow-y: auto !important;
+    }
+	
+    .navbar-collapse.collapse.in .dropdown-menu{
+        display: block !important;
+	}
+	
+    .navbar-nav {
+        margin: 0;
+        float: none !important;
+        background: #bc0807;
+    }
+
+    .navbar-nav > li {
+        float: none;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .dropdown-menu.no-bottom-space {
+        padding-bottom: 0;
+    }
+
+    /*Design for max-width: 991px*/
+    .navbar-collapse,
+    .navbar-collapse .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .navbar-nav > li > a {
+        font-size: 14px;
+        padding: 12px 60px 12px 25px;
+    }
+
+    .navbar-nav > li > a:hover {
+        background: #dbc3c3;
+    }
+
+    .dropdown-menu > li > a { 
+        padding: 10px 50px 10px 50px;
+        font-size: 13px;
+        /* color: #FFF !important; */
+        color: #FFF;
+    }
+
+    .userContainer {
+        padding-right: 0;
+    }
+
+	.currentUser {
+		padding-right: 0;
+		margin-right: 28px;
+	}
+
+    .dropped {
+        color: #bc0807; /*#d3c36e;*/
+    }
+    .dropdown > a:after,
+    .dropdown-submenu > a:after {
+        content: " ";
+    }
+    .dropdown-submenu > .dropdown-menu {  
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: block;
+        float:none;
+        box-shadow:none;
+        margin: 0 0;
+    }
+    .header-fixed,
+    .header-fixed .header-fixed-shrink,
+    .header-fixed .no-topbar,
+    .header-fixed .no-topbar.header-fixed-shrink {
+        height: inherit;
+        position: relative;
+    }
+
+    .dropdown-menu li ul > li > a {
+        padding-left: 75px;
+    }
+
+	.header,
+	.logocontainer,
+	.logo {
+		height:68px;
+	}
+
+	.logo { 
+		padding-left: 1px;
+	}
+
+	.logocontainer {
+		margin-left: 20px;
+	}
+
+	.logocontainer.scs-slot-empty {
+		height: 43px;
+		min-height: 43px;
+		margin:0;
+	}
+
+	button.navbar-toggle {
+		margin-top: 30px;
+		margin-right: 20px;
+		margin-bottom: 7px;    
+	}
+
+	.currentUser {
+		margin-right: 15px;	
+	}
+}
+
+@media (max-width: 414px) {
+	#welcomeMessage {
+		display: none;
+	}
+}
+
+@media (max-width: 374px) {
+	.currentUser {
+		display: none;
+	}	
+}
+
+@media (min-width: 861px) {
+    .dropdown-menu > li > a {
+        color:#FFF;
+        padding: 10px 4.2vw 10px 1.75vw;
+    }
+
+    .navbar-nav > .open > a,
+    .navbar-nav > .open > a:hover,
+    .navbar-nav > .open > a:focus {
+        color: #FFF;
+    }
+	
+	.nav > li.curfocus > a {
+		color: #ffffff !important;
+	}
+
+    /*Dropdown Menu*/
+    .dropdown-menu { 
+        border-radius: 0;
+        z-index: 900 !important; /* Change z-index to less than 1000, so slot and component context menus can work */
+        -webkit-box-shadow: 0 2px 2px 0px rgba(90,90,90,0.075);
+        -moz-box-shadow: 0 2px 2px 0px rgba(90,90,90,0.075);
+        box-shadow: 0 5px 5px 0px rgba(90,90,90,0.075);
+    }
+
+    .dropdown-menu > li > a {
+        /*Transition for fixed header*/
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+
+    .navbar-nav > li.dropdown:hover > .dropdown-menu {
+        display: block;
+    }   
+
+    .open > .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-menu li.dropdown-submenu:hover > a {
+        /*  color: #fff; */
+        background: #dbc3c3; /*#4e8897*/
+    }
+
+    .dropdown > a:after {
+        content: " ";
+    }
+
+    .main-nav {
+        float: none !important;
+    }
+
+    .dropdown-submenu > .dropdown-menu { 
+        top: 0; 
+        left: 100%; 
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    /*Submenu comes from LEFT side*/
+    .dropdown-submenu > .dropdown-menu.submenu-left {
+        left: -100%;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {  
+        display: block;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+    .dropdown-submenu.pull-left > .dropdown-menu {
+        left: -100%;
+        margin-left: 10px;
+    }
+}
+
+/* ------- CafeSupremo menus -------- */
+ol, ul {
+    list-style: none;
+}
+ol li li {
+	margin-left: -40px;
+	margin-bottom: 10px;
+}
+.dropdown-menu a {
+	color: rgba(255, 255, 255, .9); /*#ffffff*/
+}
+.dropdown-menu p,
+.dropdown-menu p a {
+	font-weight: bold;
+    text-transform: uppercase;
+}
+.dropdown-menu ol li li a {
+	color: rgba(255, 255, 255, .8);
+}
+.block-container {
+	float: none;
+	width: auto;
+	overflow: hidden;
+	margin: 10px 0;
+	/*border-right: solid 1px rgba(255, 255, 255, .3);*/
+}
+ol.blocks {
+	margin: 10px 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+}
+.blocks {
+    display: block;
+    clear: both;
+    margin-left: -40px; /*-20px*/
+    list-style: none;
+}
+.blocks:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.blocks>li {
+    display: inline-block;
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    padding: 0 0 0 20px;
+    background: none;
+    margin: 20px 10px;
+	min-height: 80px;
+	width: 200px;
+}
+.content-menu {
+	width: 100%;
+	background: rgba(188, 8, 7, .95); /*#bc0807*/
+	color: #ffffff;
+	min-height: 150px;
+	margin: 0;
+	height: auto;
+	overflow: hidden;
+}
+@media (min-width: 896px) and (max-width: 976px){
+	.blocks>li {
+		width: 180px;
+	}
+}
+.dropdown-menu .dropdown-container {
+	width: 26%;
+	min-height: 250px;
+	float: right;
+	border-left: solid 1px rgba(255, 255, 255, .3);
+	margin: 40px 30px 40px 0;
+	padding-left: 30px;
+}

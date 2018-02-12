@@ -84,3 +84,9 @@ and (orientation: portrait) {
   	}
 
  }
+
+ @media (min-width: 1281px){
+ 	#area-footer{
+ 		min-width: 1280px;
+ 	}
+ }

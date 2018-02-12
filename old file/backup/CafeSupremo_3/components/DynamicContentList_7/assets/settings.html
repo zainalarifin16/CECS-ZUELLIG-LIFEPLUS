@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Dynamic Content List</title>
+
+    <!-- include sample apps styling -->
+    <link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+    <!-- include supporting files -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+    <!-- include Sites SDK -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+
+    <style>
+        body {
+            background:transparent;
+            background-image:none;
+        }
+        .settings-panel {
+        }
+        .settings-select, .settings-input {
+            margin-bottom: 10px;
+        }
+        .settings-input {
+            margin-bottom: 10px;
+        }
+        .settings-label {
+            display: inline-block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<body data-bind="visible: true" style="display: none">
+
+<!-- ko if: initialized -->
+
+<div class="settings-panel">
+
+    <div class="settings-heading">Appearance</div>
+
+    <div class="settings-box">
+        <label for="sectionLayoutId" class="settings-label">Section Layout</label>
+        <select id="sectionLayoutId" class="settings-select" data-bind="options: layoutNames, optionsText: 'name', optionsValue: 'id', value: sectionLayoutId"></select>
+
+        <label for="minHeight" class="settings-label">Initial Height</label>
+        <input id="minHeight" type="number" min="0" name="minHeight" class="settings-input settings-text-box" data-bind="value: minHeight">
+    </div>
+
+    <div class="settings-heading">Responsive Layout</div>
+
+    <div class="settings-box">
+
+        <label for="breakpoint" class="settings-label">Breakpoint</label>
+        <input id="breakpoint" type="number" min="0" name="breakpoint" placeholder="example: 768" class="settings-input settings-text-box" data-bind="value: breakpoint">
+
+        <div class="settings-checkbox">
+            <input id="stackColumns" type="checkbox" data-bind="checked: stackColumns" />
+            <label for="stackColumns" class="settings-label">Stack Columns</label>
+        </div>
+
+    </div>
+
+    <div class="settings-heading">Content Items</div>
+
+    <div class="settings-box">
+        <label for="contentQuery" class="settings-label">Initial Query String (optional)</label>
+        <textarea id="contentQuery" name="contentQuery" class="settings-text-box"
+               data-bind="value: contentQuery"></textarea>
+
+        <label for="contentLayoutId" class="settings-label">Content Item Layout</label>
+        <input type="text" name="contentLayoutId" class="settings-select settings-text-box" list="contentLayoutIdList" data-bind="value: contentLayoutId">
+        <datalist id="contentLayoutIdList">
+            <option value="Default"></option>
+            <option value="Details"></option>
+        </datalist>
+
+        <label for="limit" class="settings-label">Item Limit (Max)</label>
+        <input id="limit" type="number" min="0" size="4" name="limit" class="settings-input settings-text-box"
+               data-bind="value: limit">
+
+        <label for="offset" class="settings-label">Item Offset (Skip)</label>
+        <input id="offset" type="number" min="0" size="4" name="offset" class="settings-input settings-text-box"
+               data-bind="value: offset">
+
+        <label for="noResultsMessage" class="settings-label">No Results Message</label>
+        <input id="noResultsMessage" type="text" name="noResultsMessage" class="settings-input settings-text-box"
+               data-bind="value: noResultsMessage">
+
+    </div>
+
+</div>
+
+<div data-bind="renderFixBindingHandler: true"></div>
+
+<!-- /ko -->
+
+<script type="text/javascript">
+
+    // Get URL parameters of loaded iframe
+    var urlParams = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+        urlParams[key] = value;
+    });
+    var settingsId = urlParams['id'];
+
+    // Fix scrolling in panel after render
+    ko.bindingHandlers.renderFixBindingHandler = {
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            if(settingsId) {
+                var $iframe = $('iframe#' + settingsId, window.parent.document);
+                var height = $iframe.attr('height');
+                var padding = parseInt($iframe.css('padding-top')) + parseInt($iframe.css('padding-bottom'));
+                $iframe.height(height-padding);
+            }
+        }
+    };
+
+    // define the viewModel object
+    var SettingsViewModel = function () {
+        'use strict';
+
+        var self = this;
+        self.saveData = false;
+        self.initialized = ko.observable(false);
+        self.layoutNames = ko.observableArray();
+
+        // ViewModel properties
+		var properties = [
+			'contentQuery',
+			'sectionLayoutId',
+            'contentLayoutId',
+			'limit',
+			'offset',
+            'minHeight',
+            'noResultsMessage',
+            'breakpoint',
+            'stackColumns'
+		];
+
+        // Create observables for properties
+        $.each(properties, function(i, propName){
+            self[propName] = ko.observable();
+        });
+
+        // Update height after render
+        var updateHeight = function(els) {
+            console.log("height!");
+            Sites.setHeight($(document).height());
+        }
+
+        // Update fieldNames when contentType changes
+        var updateFieldNames = function(contentType) {
+            if(contentType!==undefined){
+                var fieldArr = [];
+                $.each(self.contentTypeMap[contentType], function(propName, propValue){
+                    fieldArr.push(propName);
+                });
+                self.fieldNames(fieldArr);
+            }
+        };
+
+        // Get layoutNames from component's localStorage
+        try {
+            var arr = eval(localStorage.getItem('dynContentListLayoutNames'));
+            self.layoutNames(arr);
+        } catch (err) {
+            console.err("Error getting layoutNames: ", err);
+        }
+
+		// Get customSettingsData
+		SitesSDK.getProperty('customSettingsData', function (data) {
+
+			// Set observables values
+			$.each(properties, function(i, propName){
+				self[propName](data[propName]);
+			});
+
+			// note that viewModel is initialized and can start saving data
+			self.initialized(true);
+			self.saveData = true;
+		});
+
+        // Set customSettingsData
+		self.save = ko.computed(function () {
+
+            // Set custom setting
+            var saveconfig = {};
+            $.each(properties, function(i, propName){
+                if(self[propName]) {
+                    saveconfig[propName] = self[propName]();
+                }
+            });
+
+            if (self.saveData) {
+				SitesSDK.setProperty('customSettingsData', saveconfig);
+                //console.log("Settings saved customSettingsData: ", saveconfig);
+			}
+		}, self);
+	};
+
+    ko.applyBindings(new SettingsViewModel());
+</script>
+</body>
+</html>

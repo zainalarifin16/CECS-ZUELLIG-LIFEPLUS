@@ -1,0 +1,47 @@
+{
+  "id": "dynamicContentMenu",
+  "settingsData": {
+    "settingsWidth": 500,
+    "settingsRenderOption": "dialog",
+    "triggers" : [{
+      "triggerName" : "dynamicContentMenuClick",
+      "triggerDescription" : "Dynamic Menu Click",
+      "triggerPayload" : [
+        {
+          "name": "query",
+          "displayName": "Content Item Query"
+        }
+      ]
+    }],
+    "actions": [
+      {
+        "actionName": "dynContentMenuAnnounce",
+        "actionDescription": "Announce Selection",
+        "actionPayload": []
+      },
+      {
+        "actionName": "dynContentMenuClear",
+        "actionDescription": "Clear Selection",
+        "actionPayload": []
+      }
+    ]
+  },
+  "initialData": {
+    "componentId": "dynamicContentMenu",
+    "componentName": "Dynamic Content Menu",
+    "alignment": "center",
+    "componentLayout": "default",
+    "customSettingsData": {
+      "showAllOption" : true,
+      "allLabel" : "CURRENT",
+      "allValue" : "",
+      "defaultOption" : "CURRENT",
+      "contentType" : "Blog",
+      "fieldName" : "blog_category",
+      "autoTriggerList" : true,
+      "breakpoint": 767,
+      "menuItems": []
+    },
+    "nestedComponents": []
+  }
+}

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="_scs_theme_root_/assets/css/header.css">
+
+<div class="header row">
+	<!-- These columns are flipped so they are in the correct order in single column mode -->
+	<div class="logo col-xs-4">
+		<div class="logocontainer scs-slot" id="logocontainer"></div>
+	</div>
+	<div class="col-xs-7">
+		<div class="currentUser scs-slot" id="currentUser"></div>
+	</div>
+	<div class="search col-xs-1">
+		<div class="searchcontainer scs-slot" id="searchcontainer"></div>
+	</div>
+	<div class="navcontainer">
+		<nav class="main-nav" role="navigation">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-responsive-collapse width" id="topnav"></div>
+			<div class="dropdown" style="width: calc(100% + 20px);">
+				<div class="dropdown-menu content-menu" id="contentmenu1">
+					<div class="dropdown-container scs-slot" id="contentcontainer1"></div>
+					<div class="block-container">
+						<ol class="blocks"></ol>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown" style="width: calc(100% + 20px);">
+				<div class="dropdown-menu content-menu" id="contentmenu2">
+					<div class="dropdown-container scs-slot" id="contentcontainer2"></div>
+					<div class="block-container">
+						<ol class="blocks"></ol>
+					</div>
+				</div>
+			</div>
+		</nav>		
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(document).on({
+		mouseenter: function() {
+			$(this).parents('.dropdown').addClass('curfocus');
+		},
+		mouseleave: function() {
+			$(this).parents('.dropdown').removeClass('curfocus');
+		}
+	}, ".dropdown-toggle");
+
+	$('.navbar-collapse')
+			.on('shown.bs.collapse', function() {
+				$('.navbar-toggle').addClass('dropped')
+			})
+			.on('hidden.bs.collapse', function() {
+				$('.navbar-toggle').removeClass('dropped')
+			});
+</script>
+

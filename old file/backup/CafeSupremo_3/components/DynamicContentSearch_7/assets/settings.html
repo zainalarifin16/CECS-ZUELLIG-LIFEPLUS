@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Dynamic Content Search</title>
+
+    <!-- include sample apps styling -->
+    <link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+    <!-- include supporting files -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+    <!-- include Sites SDK -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+
+    <style>
+        body {
+            background:transparent;
+            background-image:none;
+        }
+        .settings-select, .settings-input {
+            margin-bottom: 10px;
+        }
+        .settings-label {
+            display: inline-block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .settings-checkbox {
+            display: block;
+            margin: 0px 5px 5px 5px;
+        }
+    </style>
+
+</head>
+
+<body data-bind="visible: true" style="display:none">
+
+<!-- ko if: initialized -->
+
+<div class="settings-heading">Dynamic Content</div>
+
+<div class="settings-box">
+
+    <label for="placeholderText" class="settings-label">Placeholder Text</label>
+    <input id="placeholderText" type="text" name="placeholderText" class="settings-input settings-text-box"
+           data-bind="value: placeholderText">
+
+
+    <label for="baseQuery" class="settings-label">Base Query</label>
+    <input id="baseQuery" type="text" name="baseQuery" class="settings-input settings-text-box"
+           data-bind="value: baseQuery">
+
+    <label for="typeFilter" class="settings-label">Type Filter</label>
+    <input id="typeFilter" type="text" name="typeFilter" class="settings-input settings-text-box"
+           data-bind="value: typeFilter">
+
+    <div class="settings-label" style="font-style: italic">
+        A comma-delimited list of Content Types to filter results by.
+    </div>
+</div>
+
+<div class="settings-heading">URL Search Parameter</div>
+
+<div class="settings-box">
+
+    <div class="settings-checkbox" >
+        <input id="useUrlParam" type="checkbox" data-bind="checked: useUrlParam" />
+        <label for="useUrlParam" class="settings-label">Enable</label>
+    </div>
+
+    <label for="urlParam" class="settings-label">Parameter Name</label>
+    <input id="urlParam" type="text" name="urlParam" class="settings-input settings-text-box"
+           data-bind="value: urlParam">
+
+    <div class="settings-label" style="font-style: italic">
+        If enabled, populates the search term from a parameter in the page URL.
+        ( Ex: <u>page.html?<b data-bind="text: urlParam"></b>=iced%20coffee</u> ).
+    </div>
+
+</div>
+
+<div class="settings-heading">Auto-update Dynamic Content List</div>
+
+<div class="settings-box">
+
+    <div class="settings-checkbox">
+        <input id="autoTriggerList" type="checkbox" data-bind="checked: autoTriggerList" />
+        <label for="autoTriggerList" class="settings-label">Enable</label>
+    </div>
+
+    <div class="settings-label" style="font-style: italic">
+        If enabled, any Dynamic Content List on the same page will be updated when this Search component is invoked.
+        If false, you must Link a trigger from this component to a specific Dynamic Content List component on the page.
+    </div>
+
+</div>
+
+<div data-bind="renderFixBindingHandler: true"></div>
+
+<!-- /ko -->
+
+<script type="text/javascript">
+
+    // Get URL parameters of loaded iframe
+    var urlParams = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+        urlParams[key] = value;
+    });
+    var settingsId = urlParams['id'];
+
+    // Fix scrolling in panel after render
+    ko.bindingHandlers.renderFixBindingHandler = {
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            if(settingsId) {
+                var $iframe = $('iframe#' + settingsId, window.parent.document);
+                var height = $iframe.attr('height');
+                var padding = parseInt($iframe.css('padding-top')) + parseInt($iframe.css('padding-bottom'));
+                $iframe.height(height-padding);
+            }
+        }
+    };
+
+    // define the viewModel object
+    var SettingsViewModel = function () {
+        'use strict';
+
+        var self = this;
+        self.contentTypeMap = {};
+        self.saveData = false;
+        self.initialized = ko.observable(false);
+
+        // ViewModel properties
+		var properties = [
+			'baseQuery',
+            'typeFilter',
+			'autoTriggerList',
+            'useUrlParam',
+            'urlParam',
+            'placeholderText'
+		];
+
+        // Create observables for properties
+        $.each(properties, function(i, propName){
+            self[propName] = ko.observable();
+        });
+
+		// Get customSettingsData
+		SitesSDK.getProperty('customSettingsData', function (data) {
+
+			// Set observables values
+			$.each(properties, function(i, propName){
+				self[propName](data[propName]);
+			});
+
+			// note that viewModel is initialized and can start saving data
+			self.initialized(true);
+			self.saveData = true;
+		});
+
+        // Set customSettingsData
+		self.save = ko.computed(function () {
+
+            // Set custom settings
+            var saveconfig = {};
+            $.each(properties, function(i, propName){
+                if(self[propName]) {
+                    saveconfig[propName] = self[propName]();
+                }
+            });
+
+            if (self.saveData) {
+				SitesSDK.setProperty('customSettingsData', saveconfig);
+                console.log("Settings saved customSettingsData: ", saveconfig);
+			}
+		}, self);
+	};
+
+    ko.applyBindings(new SettingsViewModel());
+
+</script>
+</body>
+</html>

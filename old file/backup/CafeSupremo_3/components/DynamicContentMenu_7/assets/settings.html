@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Dynamic Content Menu</title>
+
+    <!-- include sample apps styling -->
+    <link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+    <!-- include supporting files -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+    <!-- include Sites SDK -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+
+    <style>
+        body {
+            background:transparent;
+            background-image:none;
+        }
+        .settings-select, .settings-input {
+            margin-bottom: 10px;
+        }
+        .settings-label, .settings-description {
+            display: inline-block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .settings-description {
+            font-style: oblique;
+            color: #cccccc;
+        }
+        .settings-checkbox {
+            display: block;
+            margin: 0px 5px 10px 0px;
+        }
+        .pending {
+            background-color: #4F5254;
+            border-color: #4F5254;
+            color: rgb(112, 113, 114);
+
+            background-image: url(img/loading.gif);
+            background-size: 16px 16px;
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+</head>
+
+<body data-bind="visible: true" style="display:none">
+
+<!-- ko if: initialized -->
+
+<div class="settings-heading">Dynamic Content</div>
+
+<div class="settings-box">
+
+    <label for="contentType" class="settings-label">Content Type</label>
+    <select id="contentType" class="settings-select" data-bind="options: contentTypes, value: contentType"></select>
+
+    <label for="fieldName" class="settings-label">Field Name</label>
+    <select id="fieldName" class="settings-select" data-bind="options: fieldNames, value: fieldName"></select>
+
+    <label for="defaultOption" class="settings-label">Default Option</label>
+    <select id="defaultOption" class="settings-select" data-bind="options: defaultOptions, value: defaultOption"></select>
+
+</div>
+
+<div class="settings-heading">Custom Menu Option</div>
+
+<div class="settings-box">
+    <label class="settings-label settings-description">
+        If enabled, a Menu Option will be added that will query items of the Content Type with the Query String below.
+        (Leave the query string blank to query all items of the Content Type.)
+    </label>
+
+    <div class="settings-checkbox">
+        <input id="showAllOption" type="checkbox" data-bind="checked: showAllOption" />
+        <label for="showAllOption" class="settings-label">Enable Custom Menu Option</label>
+    </div>
+
+    <div data-bind="visible: showAllOption">
+        <label for="allLabel" class="settings-heading" >Label</label>
+        <input id="allLabel" type="text" name="allLabel" class="settings-input settings-text-box"
+               data-bind="value: allLabel, enable:showAllOption">
+
+        <label for="allValue" class="settings-heading">Query String (optional)</label>
+        <textarea id="allValue" name="allValue" class="settings-text-box"
+                  data-bind="value: allValue, enable:showAllOption"></textarea>
+    </div>
+</div>
+
+<div class="settings-heading">Responsive Layout</div>
+
+<div class="settings-box">
+    <label for="breakpoint" class="settings-label">Breakpoint</label>
+    <input id="breakpoint" type="number" min="0" name="breakpoint" placeholder="example: 768" class="settings-input settings-text-box" data-bind="value: breakpoint">
+</div>
+
+<div class="settings-heading">Auto-Update Dynamic Content List</div>
+
+<div class="settings-box">
+
+    <div class="settings-checkbox">
+        <input id="autoTriggerList" type="checkbox" data-bind="checked: autoTriggerList" />
+        <label for="autoTriggerList" class="settings-label">Enable Auto-Update</label>
+    </div>
+
+    <label class="settings-label settings-description">
+        If enabled, any Dynamic Content List on the same page will be updated when a Menu item is selected.
+        If false, you must Link a trigger from this component to a specific Dynamic Content List component on the page.
+    </label>
+
+</div>
+
+<div data-bind="scsDynContentMenuSettings: true" class="clearfix"></div>
+<!-- /ko -->
+
+<script type="text/javascript">
+
+    // set the iFrame height when we've fully rendered
+    ko.bindingHandlers.scsDynContentMenuSettings = {
+        init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            var body = document.body,
+                    html = document.documentElement;
+
+            var height = Math.max(
+                    body.scrollHeight,
+                    body.offsetHeight,
+                    html.clientHeight,
+                    html.scrollHeight,
+                    html.offsetHeight);
+
+            $(window).height(height);
+        }
+    };
+
+    // define the viewModel object
+    var SettingsViewModel = function () {
+        'use strict';
+
+        try {
+
+            var self = this;
+            self.contentTypeMap = {};
+            self.saveData = false;
+            self.initialized = ko.observable(false);
+            self.contentTypes = ko.observableArray();
+            self.fieldNames = ko.observableArray();
+            self.defaultOptions = ko.observableArray();
+            self.menuItems = ko.observableArray();
+
+            // ViewModel properties
+            var properties = [
+                'showAllOption',
+                'allLabel',
+                'allValue',
+                'defaultOption',
+                'contentType',
+                'fieldName',
+                'autoTriggerList',
+                'menuItems',
+                'breakpoint'
+            ];
+
+            // Create observables for properties
+            $.each(properties, function (i, propName) {
+                if (self[propName] === undefined) {
+                    self[propName] = ko.observable();
+                }
+            });
+
+            // Update menu items when fieldName changes
+            var updateMenuItems = function () {
+                try {
+                    var contentType = self.contentType();
+                    var fieldname = self.fieldName();
+                    if (contentType !== undefined && fieldname !== undefined && self.contentTypeMap[contentType][fieldname]) {
+
+                        var menuItemsArr = [];
+                        var defaultsArr = [];
+
+                        if (self.showAllOption() == true) {
+                            defaultsArr.push(self.allLabel());
+                            menuItemsArr.push({
+                                label: self.allLabel(),
+                                value: self.allValue()
+                            });
+                        }
+
+                        $.each(self.contentTypeMap[contentType][fieldname], function (idx, option) {
+                            defaultsArr.push(option.label);
+                            menuItemsArr.push({
+                                label: option.label,
+                                value: option.value
+                            });
+                        });
+
+                        self.defaultOptions(defaultsArr);
+                        self.menuItems(menuItemsArr);
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            };
+
+            // Update fieldNames when contentType changes
+            var updateFieldNames = function (contentType) {
+                if (contentType !== undefined) {
+                    var fieldArr = [];
+                    $.each(self.contentTypeMap[contentType], function (propName, propValue) {
+                        fieldArr.push(propName);
+                    });
+                    self.fieldNames(fieldArr);
+
+                    updateMenuItems();
+                }
+            };
+
+            // Disable/Enable select boxes
+            var disableSelects = function (disable) {
+                var targets = "#contentType, #fieldName, #defaultOption"
+                if (disable) {
+                    $(targets).prop('disabled', true).addClass('pending');
+                } else {
+                    $(targets).prop('disabled', false).removeClass('pending');
+                }
+            }
+
+            // Get customSettingsData
+            SitesSDK.getProperty('customSettingsData', function (data) {
+
+                // Set observables values
+                $.each(properties, function (i, propName) {
+                    self[propName](data[propName]);
+                });
+
+                if (self.contentTypes().length == 0) {
+                    self.contentTypes([self.contentType()]);
+                }
+
+                if (self.fieldNames().length == 0) {
+                    self.fieldNames([self.fieldName()]);
+                }
+
+                // Listen for changes to contentType selection
+                self.contentType.subscribe(updateFieldNames);
+
+                // Listen for changes that need to update the preview
+                self.fieldName.subscribe(updateMenuItems);
+                self.showAllOption.subscribe(updateMenuItems);
+                self.allLabel.subscribe(updateMenuItems);
+
+                // note that viewModel is initialized and can start saving data
+                self.initialized(true);
+                self.saveData = true;
+            });
+
+            // Set customSettingsData
+            self.save = ko.computed(function () {
+
+                // Set custom setting
+                var saveconfig = {};
+                $.each(properties, function (i, propName) {
+                    if (self[propName]) {
+                        var propVal;
+                        var rawVal = self[propName]();
+                        // Safe copy
+                        if(typeof rawVal === 'object' || Array.isArray(rawVal)) {
+                            propVal = JSON.parse(JSON.stringify(rawVal));
+                        } else {
+                            propVal = rawVal;
+                        }
+                        saveconfig[propName] = propVal;
+                    }
+                });
+
+                if (self.saveData) {
+                    //console.log("Settings saved customSettingsData: ", saveconfig);
+                    SitesSDK.setProperty('customSettingsData', saveconfig);
+                }
+            }, self);
+
+            disableSelects(true);
+
+            // Lookup Content Types
+            $.ajax({
+                dataType: "json",
+                url: "/content/management/api/v1/aggregates/types"
+
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Query failed:", jqXHR, textStatus, errorThrown);
+
+                disableSelects(false);
+
+            }).done(function (data, textStatus, jqXHR) {
+
+                $.when($.each(data.items, function (i, contentType) {
+                    $.each(contentType.fields, function (index, field) {
+                        try {
+                            var arr = (((field.settings.caas || {}).editor || {}).options || {}).valueOptions;
+                            //var arr = field.settings.caas.editor.options.valueOptions;
+                            if (Array.isArray(arr) && arr.length > 0) {
+                                //console.log("Qualified Type, Field: ", contentType.name, field.name);
+                                if (self.contentTypeMap[contentType.name] === undefined) {
+                                    self.contentTypeMap[contentType.name] = {};
+                                }
+                                self.contentTypeMap[contentType.name][field.name] = arr;
+                            }
+                        } catch (err) {
+                        }
+                    });
+
+                })).then(function () {
+
+                    var typeArr = [];
+                    $.each(self.contentTypeMap, function (propName, propValue) {
+                        typeArr.push(propName);
+                    });
+                    self.contentTypes(typeArr);
+
+                    // Trigger listener to update fieldNames
+                    updateFieldNames(self.contentType());
+
+                    disableSelects(false);
+                });
+            });
+        } catch (err) {
+            console.error("Error invoking settings:", err);
+        }
+	};
+
+    ko.applyBindings(new SettingsViewModel());
+
+</script>
+</body>
+</html>

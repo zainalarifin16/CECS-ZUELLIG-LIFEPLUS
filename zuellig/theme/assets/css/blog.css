@@ -1,0 +1,519 @@
+#navigator_blog{
+  padding: 15px;
+}
+
+#navigator_blog a.nav-link {
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #003a48;
+}
+
+#content-post{
+  margin-top: 10px;
+}
+
+.scs-slot-empty{
+  margin: 0px!important;
+}
+
+#annoucement{
+  background-color: #003a48;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-top: 10px;
+}
+
+#annoucement p.scs-text{
+  text-align: center;
+}
+
+.header-section{
+  background-color: #006062;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  padding: 8px;
+}
+
+#hot-news-header{
+  width: 100px;
+}
+
+/* HOT NEWS SECTION */
+
+#hot-news-section{
+  min-height: 300px;
+}
+
+#hot-news-section .health-blog-area{
+  min-height: 260px;
+  background-color: #006062;
+}
+
+#hot-news-section .background-post{
+  height: 160px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hot-news-section .title-blog-list{
+  position: absolute;
+  bottom: 30px;
+  font-size: 20px;
+  margin: 15px;
+  color: #ffffff;
+}
+
+#hot-news-section .title-blog-list h1{
+  font-size: 14px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#hot-news-section .summary-health-blog{
+  position: absolute;
+  bottom: 9px;
+  font-size: 11px;
+  margin: 16px;
+  color: #ffffff;
+}
+
+#hot-news-section .summary-health-blog h3{
+  font-size: 9px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#hot-news-section .hr-health-blog{
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
+  display: block;
+  width: 190px;
+  border: 0.02em solid #ffffff;
+  opacity: 0.5;
+}
+
+/* HOT NEWS SECTION */
+
+/* HOT NEWS OTHER 1 */
+
+#hot-news-other-1 .health-blog-area{
+  min-height: 225px;
+}
+
+#hot-news-other-1 .background-post{
+  height: 160px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hot-news-other-1 .title-blog-list{
+  position: absolute;
+  bottom: 0px;
+  font-size: 20px;
+  margin: 15px;
+  color: #4a4a4a;
+}
+
+#hot-news-other-1 .title-blog-list h1{
+  font-size: 14px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#hot-news-other-1 .summary-health-blog{
+  display: none;
+}
+
+#hot-news-other-1 .hr-health-blog{
+  display: none;
+}
+
+/* HOT NEWS OTHER 1 */
+
+/* HOT NEWS OTHER 2 */
+
+#hot-news-other-2 .health-blog-area{
+  min-height: 235px;
+}
+
+#hot-news-other-2 .background-post{
+  height: 160px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hot-news-other-2 .title-blog-list{
+  position: absolute;
+  bottom: 30px;
+  font-size: 20px;
+  margin: 15px;
+  color: #4a4a4a;
+}
+
+#hot-news-other-2 .title-blog-list h1{
+  font-size: 14px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#hot-news-other-2 .summary-health-blog{
+  display: none;
+}
+
+#hot-news-other-2 .hr-health-blog{
+  display: none;
+}
+
+/* HOT NEWS OTHER 2 */
+
+/* NEWS THIS WEEK SECTION */
+
+#news-this-week-section{
+  min-height: 300px;
+}
+
+#news-this-week-section .hr-health-blog{
+  display: none;
+}
+
+#news-this-week-section .summary-health-blog{
+  display: none;
+}
+
+#news-this-week-section .title-blog-list h1{
+  font-family: Raleway;
+  font-size: 16px!important;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #006062;
+}
+
+/* NEWS THIS WEEK SECTION */
+
+/* LIFESTYLE TIPS */
+
+.lifestyle-tips .health-blog-area{
+  min-height: 200px;
+}
+
+.lifestyle-tips .hr-health-blog{
+  display: none;
+}
+
+.lifestyle-tips .background-post{
+  height: 100px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lifestyle-tips .title-blog-list{
+  position: absolute;
+  bottom: 40px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.lifestyle-tips .title-blog-list h1{
+  color: #006062;
+  font-size: 12px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.lifestyle-tips .summary-health-blog{
+  position: absolute;
+  bottom: 9px;
+  font-size: 11px;
+  margin: 5px;
+}
+
+.lifestyle-tips .summary-health-blog h3{
+  font-family: Raleway;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #716c67;
+}
+
+/* LIFESTYLE TIPS */
+
+/* HEALTH RECIPES */
+#headline-health-recipes{
+  min-height: 400px;
+}
+
+#headline-health-recipes .health-blog-area{
+  min-height: 200px;
+}
+
+#headline-health-recipes .hr-health-blog{
+  display: none;
+}
+
+#headline-health-recipes .background-post{
+  height: 100px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#headline-health-recipes .title-blog-list{
+  position: absolute;
+  top: 90px;
+}
+
+#headline-health-recipes .title-blog-list h1{
+  font-family: Montserrat;
+  font-size: 24px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #006062;
+}
+
+#headline-health-recipes .summary-health-blog{
+  position: absolute;
+  top: 150px;
+}
+
+#headline-health-recipes .summary-health-blog h3{
+  font-family: Raleway;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+/* posts */
+
+.post-health-recipes .health-blog-area{
+  padding: 0px;
+  border-bottom: 1px solid;
+  max-height: 70px;
+}
+
+.post-health-recipes .hr-health-blog{
+  display: none;
+}
+
+.post-health-recipes .summary-health-blog {
+  display: none;
+}
+
+.post-health-recipes .background-post {
+  height: 100px;
+  width: 35%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.post-health-recipes .title-blog-list{
+  position: absolute;
+  margin-left: 90px;
+}
+
+.post-health-recipes .title-blog-list h1{
+  font-family: Montserrat;
+  font-size: 12px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+/* HEALTH RECIPES */
+
+/* Lifestyle Goals */
+
+#headline-life-goal .hr-health-blog{
+  display: none;
+}
+
+#headline-life-goal .summary-health-blog {
+  display: none;
+}
+
+#headline-life-goal .title-blog-list{
+  display: none;
+}
+
+#headline-life-goal .background-post {
+  height: 160px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* lifestyle posts */
+
+.life-goal-post .health-blog-area{
+  min-height: 200px;
+}
+
+.life-goal-post .hr-health-blog{
+  display: none;
+}
+
+.life-goal-post .title-blog-list{
+  position: absolute;
+  top: 105px;
+}
+
+.life-goal-post .title-blog-list h1{
+  font-family: Montserrat;
+  font-size: 15px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #006062;
+}
+
+.life-goal-post .summary-health-blog{
+  position: absolute;
+  top: 150px;
+}
+
+.life-goal-post .summary-health-blog h3{
+  font-family: Raleway;
+  font-size: 11px!important;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #716c67;
+}
+
+.life-goal-post .background-post{
+  height: 110px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Lifestyle Goals */
+
+.post-health-recipes{
+  max-height: 100px!important;
+  min-height: 50px!important;
+}
+
+#join-life-plus-section{
+  min-height: 400px;
+}
+
+.life-goal-post{
+  min-height: 170px!important;
+}
+
+/* Disease & awareness */
+
+.disease-post{
+  min-height: 50px!important;
+  max-height: 80px!important;
+}
+
+.disease-post .health-blog-area{
+  min-height: 200px;
+  border-bottom: 1px solid;
+  min-height: 70px;
+}
+
+.disease-post .hr-health-blog{
+  display: none;
+}
+
+.disease-post .summary-health-blog{
+  display: none;
+}
+
+.disease-post .title-blog-list{
+  position: absolute;
+  margin-left: 95px;
+}
+
+.disease-post .title-blog-list h1{
+  font-family: Montserrat;
+  font-size: 12px!important;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+.disease-post .background-post{
+  height: 65px;
+  width: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Disease & awareness */

@@ -1,0 +1,35 @@
+@media (min-width:480px)  { 
+/* smartphones, Android phones, landscape iPhone */ 
+	.container {
+	    max-width: 480px;
+	}
+
+	.carousel_image {
+	    min-width: 480px;
+	}
+
+
+    /* EXPLAINER */
+	#container_explainer{
+        min-width: 480px;
+    }
+
+
+    /* EXPLAINER */
+    /* HEALTH BLOG */
+
+    .health-blog-icon{
+		width: 10%;
+    }
+
+    #btn-find-outmore{
+		margin-left: 25%;
+    }
+
+    /* HEALTH BLOG */
+
+    /* ECOMMERCE */
+
+    /* ECOMMERCE */
+
+}

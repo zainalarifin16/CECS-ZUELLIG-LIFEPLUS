@@ -1,0 +1,9 @@
+<!-- ko if: isInitialized() -->
+<div id="{0}-content" class="scs-component-content dynContentList">
+    <div id="{0}-spinner" class="spinner" style="display: none"/>
+    <!-- ko if: showNoResults() -->
+    <div class="h3 noResults" data-bind="text: noResultsMessage"></div>
+    <!-- /ko -->
+    <div id={0}-render class="scs-contentlist" data-bind="{1}: true"></div>
+</div>
+<!-- /ko -->

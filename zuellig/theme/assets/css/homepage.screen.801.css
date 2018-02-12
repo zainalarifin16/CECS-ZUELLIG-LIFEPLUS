@@ -1,0 +1,53 @@
+@media (min-width:800px)  { 
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+	
+	.navbar-expand-md .navbar-collapse{
+		max-width: 460px;
+	}
+
+	.container {
+	    max-width: 800px;
+	}
+
+	.carousel_image {
+	    min-width: 800px;
+	}
+
+
+    /* EXPLAINER */
+	#container_explainer{
+        min-width: 800px;
+    }
+
+
+    /* EXPLAINER */
+    /* HEALTH BLOG */
+
+    .health-blog-icon{
+		width: 10%;
+    }
+
+    #btn-find-outmore{
+		margin-left: 30%;
+    }
+
+    /* HEALTH BLOG */
+
+    /* ECOMMERCE */
+
+    /* ECOMMERCE */
+
+}
+
+@media (min-width:980px)  { 
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+	
+	.custom-container-carousel{
+		min-width: auto;
+	}
+
+	.custom-container-explainer{
+		min-width: auto;
+	}
+
+}

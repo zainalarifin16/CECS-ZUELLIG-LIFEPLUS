@@ -1,0 +1,48 @@
+{
+  "id": "dynamicContentSearch",
+  "settingsData": {
+    "settingsWidth": 500,
+    "settingsRenderOption": "dialog",
+    "triggers" : [{
+      "triggerName" : "dynamicContentSearch",
+      "triggerDescription" : "Content Search",
+      "triggerPayload" : [
+        {
+          "name": "query",
+          "displayName": "Content Item Query"
+        },
+        {
+          "name": "filter",
+          "displayName": "Content Type Filter"
+        }
+      ]
+    }],
+    "actions": [
+      {
+        "actionName": "dynContentSearchAnnounce",
+        "actionDescription": "Announce Search",
+        "actionPayload": []
+      },
+      {
+        "actionName": "dynContentSearchClear",
+        "actionDescription": "Clear Search",
+        "actionPayload": []
+      }
+    ]
+  },
+  "initialData": {
+    "componentId": "dynamicContentSearch",
+    "componentName": "Dynamic Content Search",
+    "alignment": "center",
+    "componentLayout": "default",
+    "customSettingsData": {
+      "baseQuery" : "",
+      "typeFilter" : "",
+      "autoTriggerList" : true,
+      "useUrlParam" : false,
+      "urlParam": "term",
+      "placeholderText": "Search"
+    },
+    "nestedComponents": []
+  }
+}

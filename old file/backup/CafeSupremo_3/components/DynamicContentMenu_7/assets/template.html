@@ -1,0 +1,15 @@
+<div class="dynContentMenu">
+    <style data-bind="text: responsiveStyle"></style>
+    <div role="navigation" data-bind="foreach: decoratedMenuItems">
+        <span data-bind="attr: {id: id, class: cssClass}">
+            <a href="#" class="dynContentMenuItem" data-bind="text: label, click: onClick"></a>
+        </span>
+    </div>
+    <!-- ko if: viewMode === "edit" -->
+    <!-- ko if: notConfigured() -->
+    <div class="scs-watermark">
+        <div class="scs-watermark-image">Dynamic Content Menu</div>
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+</div>

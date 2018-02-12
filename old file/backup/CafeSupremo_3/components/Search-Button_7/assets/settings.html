@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Search Button</title>
+
+    <!-- include sample apps styling -->
+    <link href="/_sitescloud/renderer/app/sdk/css/app-styles.css" rel="stylesheet">
+
+    <!-- include supporting files -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/knockout.min.js"></script>
+    <script type="text/javascript" src="/_sitescloud/renderer/app/apps/js/jquery.min.js"></script>
+
+    <!-- include Sites SDK -->
+    <script type="text/javascript" src="/_sitescloud/renderer/app/sdk/js/sites.min.js"></script>
+
+    <style>
+        body {
+            background:transparent;
+            background-image:none;
+        }
+        .settings-select, .settings-input {
+            margin-bottom: 10px;
+        }
+        .settings-label {
+            display: inline-block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .settings-checkbox {
+            display: block;
+            margin: 0px 5px 5px 5px;
+        }
+    </style>
+
+</head>
+
+<body data-bind="visible: true" style="display:none">
+
+<!-- ko if: initialized -->
+
+<div class="settings-heading">Appearance</div>
+
+<div class="settings-box">
+
+    <label for="popup" class="settings-label">Popover Placement</label>
+    <select id="popup" class="settings-select" data-bind="value: popover">
+        <option value="none">None</option>
+        <option value="auto">Auto</option>
+        <option value="top">Top</option>
+        <option value="right">Right</option>
+        <option value="bottom">Bottom</option>
+        <option value="left">Left</option>
+    </select>
+
+</div>
+
+<div class="settings-heading">Search Form</div>
+
+<div class="settings-box">
+
+    <label for="url" class="settings-label">Search Results URL</label>
+    <input id="url" type="text" class="settings-input settings-text-box" data-bind="value: url">
+
+    <label for="method" class="settings-label">Method</label>
+    <select id="method" class="settings-select" data-bind="value: method">
+        <option>GET</option>
+        <option>POST</option>
+    </select>
+
+    <label for="target" class="settings-label">Target</label>
+    <select id="target" class="settings-select" data-bind="value: target">
+        <option>_self</option>
+        <option>_blank</option>
+        <option>_parent</option>
+        <option>_top</option>
+    </select>
+
+</div>
+
+<div class="settings-heading">Search Parameter</div>
+
+<div class="settings-box">
+
+    <label for="urlParam" class="settings-label">Parameter Name</label>
+    <input id="urlParam" type="text" class="settings-input settings-text-box" data-bind="value: urlParam">
+
+    <label for="placeholderText" class="settings-label">Placeholder Text</label>
+    <input id="placeholderText" type="text" class="settings-input settings-text-box" data-bind="value: placeholderText">
+
+</div>
+
+<div data-bind="renderFixBindingHandler: true"></div>
+
+<!-- /ko -->
+
+<script type="text/javascript">
+
+    // Get URL parameters of loaded iframe
+    var urlParams = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+        urlParams[key] = value;
+    });
+    var settingsId = urlParams['id'];
+
+    // Fix scrolling in panel after render
+    ko.bindingHandlers.renderFixBindingHandler = {
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            if(settingsId) {
+                var $iframe = $('iframe#' + settingsId, window.parent.document);
+                var height = $iframe.attr('height');
+                var padding = parseInt($iframe.css('padding-top')) + parseInt($iframe.css('padding-bottom'));
+                $iframe.height(height-padding);
+            }
+        }
+    };
+
+    // define the viewModel object
+    var SettingsViewModel = function () {
+        'use strict';
+
+        var self = this;
+        self.contentTypeMap = {};
+        self.saveData = false;
+        self.initialized = ko.observable(false);
+
+        // ViewModel properties
+		var properties = [
+            'url',
+            'method',
+            'target',
+            'urlParam',
+            'placeholderText',
+            'popover'
+		];
+
+        // Create observables for properties
+        $.each(properties, function(i, propName){
+            self[propName] = ko.observable();
+        });
+
+		// Get customSettingsData
+		SitesSDK.getProperty('customSettingsData', function (data) {
+
+			// Set observables values
+			$.each(properties, function(i, propName){
+				self[propName](data[propName]);
+			});
+
+			// note that viewModel is initialized and can start saving data
+			self.initialized(true);
+			self.saveData = true;
+		});
+
+        // Set customSettingsData
+		self.save = ko.computed(function () {
+
+            // Set custom settings
+            var saveconfig = {};
+            $.each(properties, function(i, propName){
+                if(self[propName]) {
+                    saveconfig[propName] = self[propName]();
+                }
+            });
+
+            if (self.saveData) {
+				SitesSDK.setProperty('customSettingsData', saveconfig);
+                console.log("Settings saved customSettingsData: ", saveconfig);
+			}
+		}, self);
+	};
+
+    ko.applyBindings(new SettingsViewModel());
+
+</script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 define([
 	'jquery',
 	'./jquery-ui.min',
-	'css!./layout.css'
+	'css!./layout.css',
+	'css!./layoutBlogPost.css'	
 ], function( $ ) {
 	'use strict';
 
@@ -45,11 +46,14 @@ define([
 
 				$.each( components, function( index, value ) {
 					if( !maxItems || ( index < maxItems ) ) {
-						html += '<div id="' + value + '" class="';
+						html += '<div id="' + value + '" class="home-health-blog ';
 						if(index == 0 || index % 3 == 0){
-							html += 'col-sm-12 col-lg-12';
+							if(index == 0){
+								html += 'headline ';
+							}
+							html += 'col-sm-12 col-md-12 col-lg-12';
 						}else{
-							html += 'col-sm-12 col-lg-6';
+							html += 'col-sm-12 col-md-6 col-lg-6';
 						}
 						html += ' item-blog" ></div>';
 					}

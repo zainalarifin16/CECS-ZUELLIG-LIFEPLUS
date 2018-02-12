@@ -1,0 +1,24 @@
+{
+  "id": "searchButton",
+  "settingsData": {
+    "settingsWidth": 500,
+    "settingsRenderOption": "dialog",
+    "triggers" : [],
+    "actions": []
+  },
+  "initialData": {
+    "componentId": "searchButton",
+    "componentName": "Search Button",
+    "alignment": "center",
+    "componentLayout": "default",
+    "customSettingsData": {
+      "url" : "blog/search.html",
+      "method" : "GET",
+      "target": "_self",
+      "urlParam": "term",
+      "placeholderText": "Search ...",
+      "popover": "left"
+    },
+    "nestedComponents": []
+  }
+}

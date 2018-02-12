@@ -5,7 +5,7 @@
   <meta name="author" content="">
 
   <title>LifePlus</title>
-  <link rel="shortcut icon" href="/_scs_theme_root_/assets/images/favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico">
   <!-- Bootstrap core CSS -->
   <link href="_scs_theme_root_/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="_scs_theme_root_/assets/slick-1.8.0/slick/slick.css" rel="stylesheet">
@@ -14,6 +14,13 @@
 
   <!-- Custom styles for this template -->
   <link href="_scs_theme_root_/assets/css/homepage.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.320.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.480.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.600.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.801.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.1025.css" rel="stylesheet">
+  <link href="_scs_theme_root_/assets/css/homepage.screen.1281.css" rel="stylesheet">  
+  
   <!--$SCS_RENDER_INFO-->
   <!--$SCS_SITE_HEADER-->
   <!--$SCS_PAGE_HEADER-->
@@ -27,23 +34,22 @@
 
     <!-- Carousel -->
     <div class="carousel scs-slot" id="carousel" >
-      <div class="container" >
+      <div class="container custom-container-carousel" >
         <div class="row">
           <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ul class="carousel-indicators">
+            <!-- <ul class="carousel-indicators">
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
               <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
+            </ul> -->
 
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item carousel_image active" style="background-image: url('_scs_theme_root_/assets/images/hero/People (23)_jpg.flip.jpg');"  >
                 <div class="container-carousel-1">
-                  <img class="float-right d-none d-sm-block d-md-block d-lg-none img-acheivement" src="_scs_theme_root_/assets/images/acheivement-base.png">
                   <div class="area_carousel_text float-right" >
-                    <img class="float-right d-none d-lg-block" src="_scs_theme_root_/assets/images/acheivement-base.png">
+                    <img class="float-right img-acheivement" src="_scs_theme_root_/assets/images/acheivement-base.png">
                     <div class="carousel_text_1" >JOIN LIFE PLUS</div>
                     <div class="carousel_text_2" >START ENJOY THE BENEFIT</div>
                     <div class="carousel_text_3 float-right" >EARN POINTS AND REWARDS JUST BY LIVING HEALTHIER !</div>
@@ -95,7 +101,7 @@
       <div class="container custom-container-explainer" >
         <div class="row justify-content-center scs-slot" id="container_explainer" style="background-image: url('_scs_theme_root_/assets/images/explainer-section@3x.png');background-size: 1440px;">
           <!-- explainer content -->
-          <!-- <div class="col-sm-11 col-lg-7" id="frame_explainer" style="background-image: url('_scs_theme_root_/assets/images/explainer-animated-base.png');">
+          <div class="col-sm-11 col-lg-7" id="frame_explainer" style="background-image: url('_scs_theme_root_/assets/images/explainer-animated-base.png');">
             <img src="_scs_theme_root_/assets/images/lifeplus-logo-top.png" class="explainer-content explainer-logo-lp">
             <img src="_scs_theme_root_/assets/images/explainer_arrow.svg" class="explainer-content explainer-arrow" >
             <img src="_scs_theme_root_/assets/images/coin@2x.png" class="explainer-content explainer-coin-1">
@@ -157,7 +163,7 @@
             <p class="explainer-content explainer-text-bottom-left">LAST MONTH</p>
             <p class="explainer-content explainer-text-bottom-right">JOIN NOW</p>
 
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -167,7 +173,7 @@
       <div class="container custom-container-healthblog">
         <div class="row justify-content-center health-blog-section" >
           <!-- blog section -->
-          <h1 class="text-center health-blog-title title-section" >Health Blog<img width="100px" src="_scs_theme_root_/assets/images/icons/health_blog_icon_white.svg" ></h1>
+          <h1 class="text-center health-blog-title title-section" >Health Blog<img width="100px" class="health-blog-icon" src="_scs_theme_root_/assets/images/icons/health_blog_icon_white.svg" ></h1>
           <div class="col-sm-9 col-md-9 col-lg-8 justify-content-center" >
             <div class="row" >
               <div class="col-lg-12 col-md-12" style="max-width: 980px;margin-left: 6px;" >
@@ -177,8 +183,8 @@
               </div>
             </div>
             <div class="row" style="margin-top: 50px;" >
-              <div class="col-lg-4 offset-lg-4 offset-md-3 offset-1" >
-                <a href="" class="btn" style="width: 277.1px;height: 68.1px;border-radius: 4px;background-color: #c2d62f;font-size: 25.9px;font-weight: bold;text-align: center;color: #ffffff;padding-top: 12px;box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);border-radius: 4px;" > Find out More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              <div class="col-lg-4 offset-lg-4 offset-md-3 offset-1" id="btn-find-outmore" >
+                <a href="" class="btn btn-find-outmore" > Find out More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
@@ -302,7 +308,7 @@
 
     <!-- e-shop -->
     <div class="e-shop scs-slot scs-responsive" id="eShop" >
-      <div class="container" style="padding-left: 0px;padding-right: 0px;" >
+      <div class="container custom-container-ecommerce" style="padding-left: 0px;padding-right: 0px;" >
         <div class="row justify-content-center" id="coin_bg" style="background-image: url('_scs_theme_root_/assets/images/coins-rain.png');margin-right: 0px;margin-left: 0px;" >
           <div class="col-8" id="layer_redeem_point" >
             <h1 class="text-center" id="redeem_point" >REDEEM YOUR POINTS</h1>
@@ -310,10 +316,10 @@
           </div>
         </div>
       </div>
-      <div class="container" style="padding-left: 0px;padding-right: 0px;" >
+      <div class="container custom-container-listecommerce" style="padding-left: 0px;padding-right: 0px;" >
         <div class="row justify-content-center" id="eshop_background" style="background-image: url('_scs_theme_root_/assets/images/locate-items.jpg');margin-right: 0px;margin-left: 0px;/*-webkit-filter: blur(8.4px);filter: blur(8.4px);*/" >
           <!-- sesction E-Shop -->
-          <div class="col-sm-9 col-md-9 col-lg-9 bg-e-shop" >
+          <div class="col-sm-8 col-md-8 col-lg-8 bg-e-shop" >
             <div class="center-item" style="max-height: 360px;" >
 
               <div class="col-3 shop-item" >

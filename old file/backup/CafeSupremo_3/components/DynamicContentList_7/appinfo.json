@@ -1,0 +1,63 @@
+{
+  "id": "dynamic-content-list",
+  "settingsData": {
+    "settingsWidth": 500,
+    "settingsRenderOption": "dialog",
+    "componentLayouts": [],
+    "triggers": [
+      {
+        "triggerName" : "dynContentListReady",
+        "triggerDescription" : "Component Ready",
+        "triggerPayload" : [
+          {
+            "name": "id",
+            "displayName": "Component ID"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "actionName": "dynContentListUpdate",
+        "actionDescription": "Update Content",
+        "actionPayload": [
+          {
+            "name": "query",
+            "description": "Content Item Query",
+            "type": {
+              "ojComponent": {
+                "component": "ojInputText"
+              }
+            }
+          },
+          {
+            "name": "filter",
+            "description": "Content Type Filter",
+            "type": {
+              "ojComponent": {
+                "component": "ojInputText"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "initialData": {
+    "componentId": "contentItemDynamicList",
+    "componentName": "Content Item Dynamic List",
+    "componentLayout": "default",
+    "customSettingsData": {
+      "contentQuery": "field:type:equals=Blog",
+      "sectionLayoutId": "scs-sl-three-columns",
+      "contentLayoutId": "Default",
+      "limit": 6,
+      "offset": 0,
+      "minHeight": 900,
+      "noResultsMessage": "No Blogs Found",
+      "stackColumns": false,
+      "breakpoint": 0
+    },
+    "nestedComponents": []
+  }
+}

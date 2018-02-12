@@ -3,10 +3,9 @@
 define([
 	'jquery',
 	'mustache',
-	'text!./layout_headline.html',
-	'text!./layout_post.html',
+	'text!./layout.html',
 	'css!./design.css',
-], function($, Mustache, templateHeadline, templatePost, css) {
+], function($, Mustache, templateLayout, css) {
 	'use strict';
 
 	function ContentLayout(params) {
@@ -87,7 +86,6 @@ define([
 								typePost = "headline";
 							}
 						}
-
 						// add property value(s)
 						if ($.isArray(p)) {
 							for (var i in p) {
@@ -99,6 +97,8 @@ define([
 					}
 				}
 			}
+
+			console.log( content );
 
 			// handle no items
 			if (content.render.items.length === 0) {
@@ -116,14 +116,8 @@ define([
 
 			try {
 				// Mustache
-				var templateHtml = "";
-				if(typePost == "headline"){
-					templateHtml = templateHeadline;
-				}else if(typePost == "post"){
-					templateHtml = templatePost;
-				}
 
-				template = Mustache.render(templateHtml, content);
+				template = Mustache.render(templateLayout, content);
 
 				if (template) {
 					$(parentObj).append(template);

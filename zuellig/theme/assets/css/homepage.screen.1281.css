@@ -1,0 +1,298 @@
+@media (min-width:1281px) { 
+
+    /* CAROUSEL */
+
+    .carousel_image{
+      width: 100%;
+      min-height: 768px;
+      min-width: 1280px;
+    }
+
+    .img-acheivement{
+      width: 100%;
+    }
+
+    .carousel_text_1{
+      font-size: 66px;
+      margin-top: 94px;
+    }
+
+    .carousel_text_2{
+      font-size: 25px;
+    }
+
+    .carousel_text_3{
+      font-size: 22px;
+      width: 375px;
+    }
+
+    /* CAROUSEL */
+  
+    #container_explainer{
+      width: 100%;
+      min-width: 1280px;
+      max-width: none;
+      max-height: none;
+    }
+  
+    .custom-container-healthblog{
+      width: 100%;
+      min-width: 1280px;
+    }
+
+    .explainer-content{
+      position: absolute;
+    }
+
+    #curve_header{
+      height: 440px;
+      margin-top: -440px;
+    }
+    
+    .custom-container-explainer{
+      padding-right: 0px;
+      padding-left: 0px;
+      width: 100%;
+      min-width: 1280px;
+    }
+    
+    .custom-container-carousel{
+      width: 100%;
+      min-width: 1280px;
+    }
+    
+    #container_explainer{
+      width: 100%;
+      height: 769px;
+      object-fit: contain;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    
+    #frame_explainer{
+      width: 902px;
+      height: 567px;
+      object-fit: contain;
+      background-repeat: no-repeat;
+      margin-top: 70px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      border-radius: 4px;
+      background-size: 125%;
+      max-width: none;
+      max-height: none;
+    }
+    
+    .explainer-logo-lp{
+      top:20px;
+      left:20px;
+    }
+    
+    .explainer-arrow{
+      margin-top: -30px; 
+      margin-left: -15px;
+    }
+    
+    .explainer-text-top-right{
+      top: 20px;
+      right: 33px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-text-bottom-left{
+      top: 82%;
+      bottom: none;
+      left: 33px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-text-bottom-right{
+      bottom: 20px;
+      right: 65px;
+      font-size: 44px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-coin-1{
+      top: 55%;
+      left: 12%;
+      width: 90px;
+    }
+    
+    .explainer-coin-2{
+      top: 38%;
+      width: 90px;
+      left: 35%;
+    }
+    
+    .explainer-gift-box{
+      top: 18%;
+      right: 32%;
+      width: 140px;
+    }
+    
+    .explainer-people{
+      top: 8%;
+      right: 15%;
+      width: 100px;
+    
+    }
+    
+    .explainer-text-complete{
+      bottom: 250px;
+      left: 50px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-text-reward{
+      top: 5%;
+      left: 10%;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-text-connecting{
+      top: 64%;
+      left: 13%;
+      margin-left: 50px;
+    }
+    
+    .explainer-connection-header{
+      margin-left: 40px;
+      font-size: 21.6px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-connection-detail{
+      font-size: 10.8px;
+      font-weight: bold;
+      text-align: left;
+      color: #c2d62f;
+    }
+    
+    .explainer-text-engaging{
+      top: 50%;
+      left: 40%;
+    }
+    
+    .explainer-engaging-header{
+      margin-left: 40px;
+      font-size: 21.6px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-engaging-detail{
+      font-size: 10.8px;
+      font-weight: bold;
+      text-align: left;
+      color: #c2d62f;
+    }
+    
+    .explainer-text-gift{
+      top: 37%;
+      right: 25%;
+    }
+    
+    .explainer-gift-header{
+      margin-left: 40px;
+      font-size: 21.6px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-gift-detail{
+      font-size: 10.8px;
+      font-weight: bold;
+      text-align: left;
+      color: #c2d62f;
+    }
+    
+    .explainer-text-health-plus{
+      top: 172px;
+      right: 32px;
+    }
+    
+    .explainer-health-header{
+      margin-left: 40px;
+      font-size: 21.6px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .explainer-health-detail{
+      font-size: 10.8px;
+      font-weight: bold;
+      text-align: left;
+      color: #c2d62f;
+    }
+    
+    .explainer-text-point-conversion{
+      bottom: 140px;
+      right: 140px;
+    }
+
+    .img-point-conversion{
+      width: 100%;
+    }
+
+    /* HEALTH BLOG */
+
+    .health-blog-icon{
+      width: 100px;
+    }
+
+    .btn-find-outmore {
+      width: 277.1px;
+      font-size: 25.9px;
+    }
+
+    /* ECOMMERCE */
+    #redeem_point{
+      font-size: 48.8px;
+    }
+
+    #sub_redeem_point{
+      font-size: 20px;
+    }
+
+    .custom-container-ecommerce{
+      min-width: 1280px;
+    }
+
+    .custom-container-listecommerce{
+      min-width: 1280px;
+    }
+
+  }

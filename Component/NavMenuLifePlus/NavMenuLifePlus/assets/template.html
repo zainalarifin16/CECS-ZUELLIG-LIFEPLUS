@@ -1,0 +1,70 @@
+<script type="text/html" id="submenu-template">
+	<li data-bind="css: classes">
+		<a class="dropdown-toggle" data-hover="dropdown" data-bind="attr: {href: destination, target: target}, text: label"></a>
+
+		<!-- ko if: $data.submenus().length -->
+		<ul class="dropdown-menu" data-bind="template: {name: 'submenu-template', foreach: $data.submenus}"></ul>
+		<!-- /ko -->
+	</li>
+</script>
+
+<!-- ko if: initialized -->
+
+<button class="navbar-toggler" id="menu_toggle" type="button" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="col-lg-3" id="menu_mobile" style="padding: 0px;" >
+  <ul class="list-unstyled" style="margin-bottom: 0px;" >
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/reward-icon@2x.png" style="height: 25px;padding-right: 20px;" >COUNTRY</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/reward-icon@2x.png" style="height: 25px;padding-right: 20px;" >REWARDS</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/healthblog-icon@2x.png" style="height: 25px;padding-right: 20px;" >HEALTH BLOG</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/ecoach-icon@2x.png" style="height: 25px;padding-right: 20px;" >E-COACH</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/reward-icon@2x.png" style="height: 25px;padding-right: 20px;" >EVENTS</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/forum-icon@2x.png" style="height: 25px;padding-right: 20px;" >FORUM</a>
+    </li>
+    <li class="mobile-menu-li" >
+      <a class="nav-link" href="#"><img src="images/forum-icon@2x.png" style="height: 25px;padding-right: 20px;" >LOGIN</a>
+    </li>
+  </ul>
+</div>
+
+<div class="collapse navbar-collapse justify-content-center" id="navbarsExample09" style="margin-top: 40px;" >
+  <ul class="navbar-nav" data-bind="foreach: navMenus" >
+
+  	<li class="nav-item text-center">
+      <a class="nav-link" data-bind="attr: {href: destination, target: target}, text: name" ></a>
+	    <!-- ko: if submenus().length -->
+		  <ul class="dropdown-menu" data-bind="template: {name: 'submenu-template', foreach: submenus}"></ul>
+	    <!-- /ko -->
+    </li>
+
+    <!-- <li class="nav-item text-center">
+      <a class="nav-link" href="#"><img src="_scs_theme_root_/assets/images/reward-icon@2x.png" style="height: 25px;" class="text-center" ><br/>REWARDS <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item text-center">
+      <a class="nav-link" href="#"><img src="_scs_theme_root_/assets/images/healthblog-icon@2x.png" style="height: 25px;" class="text-center" ><br/>HEALTH BLOG</a>
+    </li>
+    <li class="nav-item text-center">
+      <a class="nav-link" href="#"><img src="_scs_theme_root_/assets/images/ecoach-icon@2x.png" style="height: 25px;" class="text-center" ><br/>E-COACH</a>
+    </li>
+    <li class="nav-item text-center">
+      <a class="nav-link" href="#"><img src="_scs_theme_root_/assets/images/reward-icon@2x.png" style="height: 25px;" class="text-center" ><br/>EVENTS</a>
+    </li>
+    <li class="nav-item text-center">
+      <a class="nav-link" href="#"><img src="_scs_theme_root_/assets/images/forum-icon@2x.png" style="height: 25px;" class="text-center" ><br/>FORUM</a>
+    </li> -->
+  </ul>
+</div>
+<!-- /ko -->
