@@ -6,6 +6,12 @@ html{
 
 #logo_company{
   width: 170px;
+  min-width: 100px;
+  max-height: 100px;
+}
+
+#logo_company .scs-component-container{
+  width: 130px;
 }
 
 .icon-small
