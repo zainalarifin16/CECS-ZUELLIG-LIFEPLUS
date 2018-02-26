@@ -4,6 +4,10 @@ html{
   overflow-x: hidden;
 }
 
+.container{
+  margin: 0px auto!important;
+}
+
 #logo_company{
   width: 170px;
   min-width: 100px;
@@ -11,7 +15,26 @@ html{
 }
 
 #logo_company .scs-component-container{
-  width: 130px;
+  width: 170px;
+}
+
+#fast-menu{
+  background-color: #006062;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 15px 50px 0px 50px
+}
+
+#fast-menu .scs-text{
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 
 .icon-small
@@ -144,7 +167,7 @@ html{
 #curve_header{
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 70%;
   height: 440px;
   position: absolute;
   margin-top: -440px;
@@ -205,7 +228,6 @@ html{
   max-width: 1440px;
   max-height: 768px;
   min-width: 1280px;
-  margin-top: 30px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -213,26 +235,27 @@ html{
 .carousel_text_1{
   font-size: 66px;
   font-weight: bold;
-  text-align: right;
-  color: #c2d62f;
+  text-align: center;
+  color: #ffffff;
   margin-top:94px;
 }
 
 .carousel_text_2{
   font-size: 25px;
   font-weight: bold;
-  text-align: right;
-  color: #006062;
+  text-align: center;
+  color: #ffffff;
 }
 
 .carousel_text_3{
+  margin: 0px auto;
   font-size: 22px;
   font-weight: bold;
-  text-align: right;
-  color: #739849;
+  text-align: center;
+  color: #ffffff;
   width: 375px;
-  margin-top: 30px;
-  margin-bottom: 70px;
+  /*margin-top: 30px;*/
+  /*margin-bottom: 70px;*/
 }
 
 .container-carousel-1{
@@ -264,9 +287,215 @@ html{
 
 a.btn.join-button {
   padding-top: 10px;
+  margin-right: 100px;
+  margin-top: 50px;
 }
 
 /* Carousel End */
+
+/* Subscribe Component */
+
+#subscribeArea{
+  background-color: #006062;
+  min-height: 100px;
+  margin: 0px auto;
+  max-width: 1280px
+}
+
+
+.custom-container-subscribe{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#subscribe-text{
+  position: absolute;
+}
+
+#subscribe-component{
+  position: absolute;
+  right: 80px;
+}
+
+.custom-container-subscribe .scs-slot-empty{
+  width: 30%;
+  float: left;
+  min-height: 20px!important;
+  max-height: 85px;
+}
+
+.custom-container-subscribe p {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  width: 400px;
+  margin-left: 200px;
+  margin-top: 15px;
+}
+
+.subscribe-area #subscribe-component{
+
+}
+
+/* Subscribe Component */
+
+/* Categories Post Area */
+
+#categoriesPostArea{
+  background-color: #f4f1f1;
+  min-height: 100px;
+  margin: 0px 39px 0px 30px;
+  background-repeat: no-repeat;
+  background-size: 101%;
+  border: 0px;
+  min-height: 1000px;
+  background-position-y: -1px;
+  background-position-x: -1px;
+  margin: 0px auto;
+  max-width: 1280px
+}
+
+.custom-container-categories{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#title-categories-post{
+  top: 50px;
+}
+
+#title-categories-post .scs-title-text{
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 1000;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f6f6f6;
+  margin-top: 50px;
+}
+
+#categories-post{
+  margin-top: 50px;
+}
+
+#categories-post .scs-image-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 18px;
+  right: 17px;
+  background-color: #ffff;
+  padding: 8px;
+  max-width: 270px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #006062;
+}
+
+#title-the-latest-news-and-events .scs-title-text{
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #006062;
+}
+
+#post-latest-news-and-events .sl-two-columns .blog-default .image{
+  max-height: 370px;
+}
+
+/* Categories Post Area */
+
+#lifeplus-button-join{
+  background-size: 100%!important;
+  min-height: 125px;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#lifeplus-button-join .scs-component-content{
+  right: 280px;
+  top: 45px;
+  position: absolute;
+}
+
+#ecoach-section{
+  background-color: #f4f1f1;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#ecoach-section .scs-image{
+  margin: 0px!important;
+}
+
+#ecoach-section .sl-two-columns-right {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+#watching-banner{
+  background-color: #006062;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 25px;
+}
+
+#watching-banner .scs-title-text{
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+#video-area{
+  background-color: #f4f1f1;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#video-title{
+  padding: 40px 30px 0px 30px;
+}
+
+#video-title .scs-title-text{
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #006062;
+}
+
+#list-video{
+  padding: 40px;
+}
 
 /* EXPLAINER START */
 
@@ -518,12 +747,13 @@ a.btn.join-button {
   background-color: #003a48;
 }
 
-.health-blog-title{
+.title-section{
   font-weight: bold;
   text-align: left;
   color: #ffffff;
   background-color: #00495a;
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .btn-more-headline{

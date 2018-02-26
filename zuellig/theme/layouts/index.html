@@ -32,6 +32,8 @@
 
     <includeHTML urlPrefix="_scs_theme_root_" includeFile="/assets/html/header.html"></includeHTML>
 
+    <div class="scs-slot" id="fast-menu" ></div>
+
     <!-- Carousel -->
     <div class="carousel scs-slot" id="carousel" >
       <div class="container custom-container-carousel" >
@@ -46,18 +48,45 @@
 
             <!-- The slideshow -->
             <div class="carousel-inner">
-              <div class="carousel-item carousel_image active" style="background-image: url('_scs_theme_root_/assets/images/hero/People (23)_jpg.flip.jpg');"  >
+              <div class="carousel-item carousel_image active" style="background-image: url('_scs_theme_root_/assets/images/hero/1.jpg');"  >
                 <div class="container-carousel-1">
                   <div class="area_carousel_text float-right" >
-                    <img class="float-right img-acheivement" src="_scs_theme_root_/assets/images/acheivement-base.png">
+                    <!-- <img class="float-right img-acheivement" src="_scs_theme_root_/assets/images/acheivement-base.png"> -->
                     <div class="carousel_text_1" >JOIN LIFE PLUS</div>
                     <div class="carousel_text_2" >START ENJOY THE BENEFIT</div>
-                    <div class="carousel_text_3 float-right" >EARN POINTS AND REWARDS JUST BY LIVING HEALTHIER !</div>
+                    <div class="text-center" >
+                      <img src="_scs_theme_root_/assets/images/coin@2x.png" style="width:50px;" >
+                      <img src="_scs_theme_root_/assets/images/coin@2x.png" style="width:50px;" >
+                      <img src="_scs_theme_root_/assets/images/coin@2x.png" style="width:50px;" >
+                    </div>
+                    <div class="carousel_text_3" >EARN POINTS AND REWARDS JUST BY LIVING HEALTHIER !</div>
                   </div>
                   <div class="clearfix"></div>
                   <div class="float-right"><a href="" class="btn join-button">JOIN NOW</a></div>
                 </div>
               </div>
+              <!-- <div class="carousel-item carousel_image" style="background-image: url('_scs_theme_root_/assets/images/hero/2.jpg');"  >
+                <div class="container-carousel-1">
+                  <div class="area_carousel_text float-right" >
+                    <div class="carousel_text_1" >JOIN LIFE PLUS</div>
+                    <div class="carousel_text_2" >START ENJOY THE BENEFIT</div>
+                    <div class="carousel_text_3" >EARN POINTS AND REWARDS JUST BY LIVING HEALTHIER !</div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="float-right"><a href="" class="btn join-button">JOIN NOW</a></div>
+                </div>
+              </div>
+              <div class="carousel-item carousel_image" style="background-image: url('_scs_theme_root_/assets/images/hero/3.jpg');"  >
+                <div class="container-carousel-1">
+                  <div class="area_carousel_text float-right" >
+                    <div class="carousel_text_1" >JOIN LIFE PLUS</div>
+                    <div class="carousel_text_2" >START ENJOY THE BENEFIT</div>
+                    <div class="carousel_text_3" >EARN POINTS AND REWARDS JUST BY LIVING HEALTHIER !</div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="float-right"><a href="" class="btn join-button">JOIN NOW</a></div>
+                </div>
+              </div> -->
               <!-- <div class="carousel-item carousel_image" style="background-image: url('_scs_theme_root_/assets/images/christopher-campbell-40367.jpg');" >
                 <div class="container-carousel-1">
                   <div class="area_carousel_text float-right" >
@@ -97,10 +126,9 @@
     </div>
 
     <!-- Explainer -->
-    <div class="explainer scs-responsive" id="explainer" >
+    <!-- <div class="explainer scs-responsive" id="explainer" >
       <div class="container custom-container-explainer" >
         <div class="row justify-content-center scs-slot" id="container_explainer" style="background-image: url('_scs_theme_root_/assets/images/explainer-section@3x.png');background-size: 1440px;">
-          <!-- explainer content -->
           <div class="col-sm-11 col-lg-7" id="frame_explainer" style="background-image: url('_scs_theme_root_/assets/images/explainer-animated-base.png');">
             <img src="_scs_theme_root_/assets/images/lifeplus-logo-top.png" class="explainer-content explainer-logo-lp">
             <img src="_scs_theme_root_/assets/images/explainer_arrow.svg" class="explainer-content explainer-arrow" >
@@ -166,14 +194,51 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <!-- Subscribe Area -->
+    <div class="scs-responsive" id="subscribeArea" >
+      <div class="container custom-container-subscribe" >
+        <div class="scs-slot" id="subscribe-text" ></div>
+        <div class="scs-slot" id="subscribe-component" ></div>
+      </div>
+    </div>
+    <!-- Subscribe Area -->
+
+    <!-- Categories Post Area -->
+    <div class="scs-responsive" id="categoriesPostArea" style="background-image: url('_scs_theme_root_/assets/images/cat-page-deco.svg');" >
+      <div class="container custom-container-categories" >
+        <div class="scs-slot" id="title-categories-post" ></div>
+        <div class="scs-slot" id="categories-post" ></div>
+        <div class="scs-slot" id="title-the-latest-news-and-events"></div>
+        <div class="scs-slot" id="post-latest-news-and-events" ></div>
+      </div>
+    </div>
+    <!-- Categories Post Area -->
+
+    <!-- Join Life Plus Banner -->
+
+    <div class="scs-responsive" id="lifeplus-join-banner-area" >
+      <div class="scs-slot" id="lifeplus-button-join" ></div>
+    </div>
+
+    <!-- Join Life Plus Banner -->
+    
+    <div class="scs-responsive" >
+      <div class="scs-slot" id="ecoach-section" ></div>
+    </div>
+
+    <div class="scs-slot" id="watching-banner" ></div>
+    <div class="scs-responsive" id="video-area" >
+      <div class="scs-slot" id="video-title" ></div>
+      <div class="scs-slot" id="list-video" ></div>
     </div>
 
     <!-- Health Blog -->
-    <div class="health-blog scs-responsive" id="healthBlog" >
+    <!-- <div class="health-blog scs-responsive" id="healthBlog" >
       <div class="container custom-container-healthblog">
         <div class="row justify-content-center health-blog-section" >
-          <!-- blog section -->
-          <h1 class="text-center health-blog-title title-section" >Health Blog<img width="100px" class="health-blog-icon" src="_scs_theme_root_/assets/images/icons/health_blog_icon_white.svg" ></h1>
+          <h1 class="text-center title-section" >Health Blog<img width="100px" class="health-blog-icon" src="_scs_theme_root_/assets/images/icons/health_blog_icon_white.svg" ></h1>
           <div class="col-sm-9 col-md-9 col-lg-8 justify-content-center" >
             <div class="row" >
               <div class="col-lg-12 col-md-12" style="max-width: 980px;margin-left: 6px;" >
@@ -190,7 +255,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="forum" >
       <div class="container custom-container-healthblog" >
@@ -309,6 +374,7 @@
     <!-- e-shop -->
     <div class="e-shop scs-slot scs-responsive" id="eShop" >
       <div class="container custom-container-ecommerce" style="padding-left: 0px;padding-right: 0px;" >
+        <h1 class="text-center title-section" >REWARDS<img width="100px" class="health-blog-icon" src="_scs_theme_root_/assets/images/icons/rewards_icon.svg" ></h1>
         <div class="row justify-content-center" id="coin_bg" style="background-image: url('_scs_theme_root_/assets/images/coins-rain.png');margin-right: 0px;margin-left: 0px;" >
           <div class="col-8" id="layer_redeem_point" >
             <h1 class="text-center" id="redeem_point" >REDEEM YOUR POINTS</h1>
@@ -410,7 +476,7 @@
             </div>
             <div class="col-lg-12" >
               <div class="row justify-content-center" >
-                <div class="col-lg-2" >
+                <div class="col-lg-3" >
                   <a href="" class="btn" style="margin:0px auto;width:100%;border-radius: 3.2px;background-color: #c2d62f;box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.25);" > SELECT </a>
                 </div>
               </div>

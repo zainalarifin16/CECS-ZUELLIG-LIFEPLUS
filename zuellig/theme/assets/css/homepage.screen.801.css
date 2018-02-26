@@ -6,7 +6,8 @@
 	}
 
 	.container {
-	    max-width: 800px;
+	    max-width: 1200px;
+    	margin-left: 30px;
 	}
 
 	.carousel_image {

@@ -66,9 +66,9 @@
     }
 
     .join-button{
-        width: 150px;
-        height: 56px;
-        font-size: 20px;
+        width: 200px;
+        height: 60px;
+        font-size: 24px;
     }
 
     .custom-container-explainer{
@@ -219,7 +219,7 @@
 
     /* BLOG POST */
 
-    .health-blog-title{
+    .title-section{
         font-size: 25px;
     }
 
