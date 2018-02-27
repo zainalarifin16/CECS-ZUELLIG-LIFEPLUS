@@ -1,3 +1,35 @@
+// start set effect
+$(window).scroll(function(){
+  var windowWidth = $(this).width();
+  var windowHeight = $(this).height();
+  var windowScrollTop = $(this).scrollTop();
+
+  // effect categories post
+  if (windowScrollTop >= 500) {
+    $('#title-categories-post').animate( {'opacity' : '1'}, 500);
+    // all section to set opacity to 1
+    $('#categories-post')
+      .find('.sl-three-columns .scs-component-content .scs-component-container:not(.scs-sectionlayout)')
+      .animate( {'opacity' : '1'}, 500);
+
+    // left section animation
+    $('#categories-post')
+      .find('.sl-three-columns .sl-three-columns-left .scs-component-content .scs-component-container:not(.scs-sectionlayout)')
+      .animate( {'margin-left' : '0'}, 500);
+
+    // center section animation set opacity 1000ms
+    $('#categories-post')
+      .find('.sl-three-columns .sl-three-columns-center .scs-component-content .scs-component-container:not(.scs-sectionlayout)')
+      .animate( {'opacity': '1'}, 1000);
+
+    // right section animation
+    $('#categories-post')
+      .find('.sl-three-columns .sl-three-columns-right .scs-component-content .scs-component-container:not(.scs-sectionlayout)')
+      .animate( {'margin-right': '0'}, 500);
+  }
+});
+// end set effect
+
 $(document).ready(function(){
 
   //country section

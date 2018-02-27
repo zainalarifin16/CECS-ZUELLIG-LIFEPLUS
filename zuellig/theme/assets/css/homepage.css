@@ -422,6 +422,24 @@ a.btn.join-button {
   max-height: 370px;
 }
 
+/* start add style for animation categories post */
+#title-categories-post {
+  opacity: 0;
+}
+
+#categories-post .sl-three-columns .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	opacity: 0;
+}
+
+#categories-post .sl-three-columns .sl-three-columns-left .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	margin-left: -500px;
+}
+
+#categories-post .sl-three-columns .sl-three-columns-right .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	margin-right: -500px;
+}
+/* end add style for animation categories post */
+
 /* Categories Post Area */
 
 #lifeplus-button-join{
