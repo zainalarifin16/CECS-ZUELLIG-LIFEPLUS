@@ -422,6 +422,16 @@ a.btn.join-button {
   max-height: 370px;
 }
 
+/* start add style for animation categories post 2 */
+#title-the-latest-news-and-events {
+  opacity: 0;
+}
+
+#post-latest-news-and-events .scs-component-content .scs-component-container:not(.scs-sectionlayout):not(.scs-componentgroup) {
+  opacity: 0;
+}
+/* end add style for animation categories post 2 */
+
 /* start add style for animation categories post */
 #title-categories-post {
   opacity: 0;
