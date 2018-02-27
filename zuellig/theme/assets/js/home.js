@@ -27,6 +27,26 @@ $(window).scroll(function(){
       .find('.sl-three-columns .sl-three-columns-right .scs-component-content .scs-component-container:not(.scs-sectionlayout)')
       .animate( {'margin-right': '0'}, 500);
   }
+
+  // effect ecoach 
+  if (windowScrollTop >= 3000) {
+    var element = $('#ecoach-section').find('.sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout)');
+    var interval = 1000;
+    for (let index = 0; index < element.length; index++) {
+      var elem = element[index];
+      var id = '#' + elem.id;
+      var intervalName = interval + 100;
+      var intervalBio = intervalName + 100;
+      $(id).animate( {'margin-left': '0'}, interval);
+      $(id)
+        .find('.coach-name')
+        .animate( {'opacity': '1'}, intervalName);
+      $(id)
+        .find('.coach-bio')
+        .animate( {'opacity': '1'}, intervalBio);
+      interval += 500;
+    }
+  }
 });
 // end set effect
 

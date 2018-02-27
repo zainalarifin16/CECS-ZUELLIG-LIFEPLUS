@@ -470,6 +470,17 @@ a.btn.join-button {
     padding-left: 30px;
 }
 
+/* start add style for animation ecoach section */
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) {
+  margin-left: -500px;
+}
+
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) .coach-name,
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) .coach-bio {
+  opacity: 0;
+}
+/* end add style for animation ecoach section */
+
 #watching-banner{
   background-color: #006062;
   max-width: 1280px;
