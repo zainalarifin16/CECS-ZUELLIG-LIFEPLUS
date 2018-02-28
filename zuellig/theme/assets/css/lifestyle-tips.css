@@ -1,0 +1,135 @@
+/* start image lifestyletips page */
+#image-lifestyletips {
+  height: 200px;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#image-lifestyletips .scs-image .scs-image-image {
+  height: 200px;
+}
+/* end image lifestyletips page */
+
+/* start breadcrumb */
+#breadcrumb {
+  height: 55px;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+/* end breadcrumb */
+
+/* start lifestyletips post */
+#title-lifestyletips-post {
+  height: 41px;
+  max-width: 1280px;
+  margin: 0px auto;
+  margin-bottom: 25px;
+}
+
+#lifestyletips-post {
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#lifestyletips-post .scs-paragraph {
+  display: none;
+  transition: 1s;
+}
+
+#lifestyletips-post .summary-card-title > div {
+  transition: 1s;
+}
+/* end lifestyletips post */
+
+/* start lifestyletips pagination */
+#lifestyletips-pagination {
+  height: 40px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+#lifestyletips-pagination .oval {
+  width: 40px;
+  height: 40px;
+  background-color: #818383;
+  color: #FFF;
+  margin: 0px 20px;
+  border-radius: 50%;
+  transition: 1s;
+  padding: 8px 15px;
+  float: left;
+}
+
+#lifestyletips-pagination .oval:hover {
+  background-color: #c2d62f;
+  transition: 1s;
+}
+
+#lifestyletips-pagination .oval.active {
+  background-color: #c2d62f;
+}
+
+#lifestyletips-pagination .next-page {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #818383;
+  color: #FFF;
+  transition: 1s;
+  padding: 8px 35px;
+  float: left;
+}
+
+#lifestyletips-pagination .next-page:hover {
+  background-color: #c2d62f;
+  transition: 1s;
+}
+/* end lifestyletips pagination */
+
+/* start subscriber */
+#subscriber {
+  height: 100px;
+  background-color: #006062;
+  margin-bottom: 14px;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 10px 0px 36px 108px;
+}
+
+#subscriber .scs-title {
+  width: 457px;
+  height: 54px;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+#subscriber .scs-search-input {
+  padding: 8px;
+}
+
+#subscriber .scs-button .scs-button-button {
+  padding: 10px;
+  width: 137px;
+  height: 40px;
+  background-color: #c2d62f;
+}
+
+#subscriber .scs-button .scs-button-text {
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #006062;
+}
+/* end subscriber */

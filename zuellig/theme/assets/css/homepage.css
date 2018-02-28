@@ -24,7 +24,7 @@ html{
   margin: 0px auto;
 }
 
-#fast-menu .scs-text, 
+#fast-menu .scs-button-text, 
 #fast-menu a {
   font-family: Montserrat;
   font-size: 12px;
@@ -35,6 +35,7 @@ html{
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
+  cursor: pointer;
 }
 
 #fast-menu a {
@@ -53,7 +54,8 @@ html{
 }
 
 #fast-menu .scs-component-container .scs-component-bounding-box div {
-  padding-top: 5px;
+  padding: 5px;
+  text-align: center !important;
 }
 /* end style hover menu bar */
 
