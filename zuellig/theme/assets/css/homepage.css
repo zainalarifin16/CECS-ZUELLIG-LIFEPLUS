@@ -184,6 +184,27 @@ html{
   padding: 0px 10px 0px 10px;
 }
 
+/* carousel */
+
+.area_carousel_text{
+  padding: 20px;
+  margin-top: 140px;
+  margin-right: 50px;
+}
+
+.background-text-carousel{
+  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 510px;
+  height: 292px;
+  position: absolute;
+  right: 55px;
+  top: 165px;
+  z-index: -1;
+}
+
+/* carousel */
+
 #curve_header{
   background-size: cover;
   background-repeat: no-repeat;
@@ -257,7 +278,6 @@ html{
   font-weight: bold;
   text-align: center;
   color: #ffffff;
-  margin-top:94px;
 }
 
 .carousel_text_2{
