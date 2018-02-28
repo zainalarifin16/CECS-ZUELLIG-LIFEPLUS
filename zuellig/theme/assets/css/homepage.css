@@ -422,6 +422,34 @@ a.btn.join-button {
   max-height: 370px;
 }
 
+/* start add style for animation categories post 2 */
+#title-the-latest-news-and-events {
+  opacity: 0;
+}
+
+#post-latest-news-and-events .scs-component-content .scs-component-container:not(.scs-sectionlayout):not(.scs-componentgroup) {
+  opacity: 0;
+}
+/* end add style for animation categories post 2 */
+
+/* start add style for animation categories post */
+#title-categories-post {
+  opacity: 0;
+}
+
+#categories-post .sl-three-columns .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	opacity: 0;
+}
+
+#categories-post .sl-three-columns .sl-three-columns-left .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	margin-left: -500px;
+}
+
+#categories-post .sl-three-columns .sl-three-columns-right .scs-component-content .scs-component-container:not(.scs-sectionlayout) {
+	margin-right: -500px;
+}
+/* end add style for animation categories post */
+
 /* Categories Post Area */
 
 #lifeplus-button-join{
@@ -451,6 +479,17 @@ a.btn.join-button {
     padding-top: 50px;
     padding-left: 30px;
 }
+
+/* start add style for animation ecoach section */
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) {
+  margin-left: -500px;
+}
+
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) .coach-name,
+#ecoach-section .sl-two-columns-right .scs-component-container.scs-componentgroup .scs-component-container:not(.scs-sectionlayout) .coach-bio {
+  opacity: 0;
+}
+/* end add style for animation ecoach section */
 
 #watching-banner{
   background-color: #006062;
