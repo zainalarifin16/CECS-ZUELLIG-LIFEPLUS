@@ -22,10 +22,10 @@ html{
   background-color: #006062;
   max-width: 1280px;
   margin: 0px auto;
-  padding: 15px 50px 0px 50px
 }
 
-#fast-menu .scs-text{
+#fast-menu .scs-text, 
+#fast-menu a {
   font-family: Montserrat;
   font-size: 12px;
   font-weight: 500;
@@ -36,6 +36,26 @@ html{
   text-align: center;
   color: #ffffff;
 }
+
+#fast-menu a {
+  text-decoration: none;
+}
+
+/* start style hover menu bar */
+#fast-menu .sl-horizontal-item {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#fast-menu .sl-horizontal-item:hover {
+  background-color: #c2d62f;
+  transition: 0.5s
+}
+
+#fast-menu .scs-component-container .scs-component-bounding-box div {
+  padding-top: 5px;
+}
+/* end style hover menu bar */
 
 .icon-small
 {
