@@ -39,16 +39,29 @@
 #lifestyletips-post .summary-card-title > div {
   transition: 1s;
 }
-/* end lifestyletips post */
 
-/* start lifestyletips pagination */
-#lifestyletips-pagination {
-  height: 40px;
-  max-width: 500px;
-  margin: 20px auto;
+#lifestyletips-post .scs-contentlist ol.scs-pagination {
+  margin: 20px;
 }
 
-#lifestyletips-pagination .oval {
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #818383;
+  color: #FFF;
+  transition: 1s;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage.scs-disabled a,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage.scs-disabled a {
+  cursor: not-allowed;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber {
   width: 40px;
   height: 40px;
   background-color: #818383;
@@ -56,35 +69,16 @@
   margin: 0px 20px;
   border-radius: 50%;
   transition: 1s;
-  padding: 8px 15px;
-  float: left;
+  padding: 5px;
 }
 
-#lifestyletips-pagination .oval:hover {
-  background-color: #c2d62f;
-  transition: 1s;
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage:not(.scs-disabled):hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage:not(.scs-disabled):hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber:hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber.scs-current {
+  background-color: #c2d62f
 }
-
-#lifestyletips-pagination .oval.active {
-  background-color: #c2d62f;
-}
-
-#lifestyletips-pagination .next-page {
-  width: 150px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #818383;
-  color: #FFF;
-  transition: 1s;
-  padding: 8px 35px;
-  float: left;
-}
-
-#lifestyletips-pagination .next-page:hover {
-  background-color: #c2d62f;
-  transition: 1s;
-}
-/* end lifestyletips pagination */
+/* end lifestyletips post */
 
 /* start subscriber */
 #subscriber {
