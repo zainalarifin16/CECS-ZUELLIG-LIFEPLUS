@@ -41,14 +41,29 @@ define([
                     contentType = content.scsData.showPublishedContent === true ? 'published' : 'draft';
                 }
 
-                // Get formatted date
-                content.formattedDate = dateToMDY(content.updateddate);
+                console.log("blog detail", content.data);
 
 				// Check blog-post_content availability
-				if (!content.data.hasOwnProperty('blog-post_content')) {
+				if (!content.data.hasOwnProperty('blog-postv3_content')) {
 					console.warn("blog_post_content field is not available in a ContentList component.");
 					content.data.blog_post_content = "<b>Warning: This blog's content is not available when it is shown in a list.</b>"
 				}
+
+				//get author
+				content.author = content.data["blog-postv3_author"];
+				// Get formatted date
+                content.formattedDate = dateToMDY(content.updateddate);
+				//get category post
+				content.category_post = content.data["blog-postv3_category_post"];
+				//get title
+				content.title = content.data["blog-postv3_title"];
+				//get content
+				content.blog_post_content = content.data["blog-postv3_content"];
+				//get image
+				content.image_header = content.data["blog-postv3_media_post"][0];
+				content.image_1  = content.data["blog-postv3_media_post"][1];
+				content.image_2  = content.data["blog-postv3_media_post"][2];
+
 				
                 // Append HTML to DOM
                 var template = Mustache.render(templateHtml, content);
