@@ -1,0 +1,26 @@
+<ul class="scs-cl-default-layout">
+    <li>
+        <h1>{{name}}</h1>
+    </li>
+    {{#render.items}} {{#label}}
+    <li>
+        <h2>{{label}}</h2>
+    </li>
+    {{/label}} {{#text}}
+    <li>
+        <p>{{text}}</p>
+    </li>
+    {{/text}} {{#image}}
+    <li>
+        <img src="{{image}}" />
+    </li>
+    {{/image}} {{/render.items}} {{#render.self}}
+    <li>
+        <a href="{{render.self}}">Content Item Data</a>
+    </li>
+    {{/render.self}} {{#scsData.detailPageLink}}
+    <li>
+        <a href="{{scsData.detailPageLink}}" title="Go to detail page"><span class="detail-page">Details</span></a>
+    </li>
+    {{/scsData.detailPageLink}}
+</ul>
