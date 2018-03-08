@@ -39,6 +39,10 @@
 	border-style: solid;
 }
 
+.blog-details img{
+	width: 100%;
+}
+
 .blog-details .contentItem {
 	width: 100%;
 	padding-left: 3.43vw;
@@ -46,17 +50,29 @@
     padding-bottom: 1.37vw;
 }
 
+.blog-details .info-content{
+	border-top: solid 1px;
+    border-bottom: solid 1px;
+    float: right;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
 .blog-details .date {
 	font-size: 12px;
     line-height: 1.1;
-	padding-top: 20px;	
-	color: #666666;
+    color: #666666;
+    float: right;
 }
 
 .blog-details .name {
-	font-size: 4.4vw;
+	font-size: 45px;
     line-height: 1.1;
 	padding-top: 1.5vw;	
+	font-weight: 600;
+	text-align: center;
+	padding: 30px;
 }
 
 .blog-details .description {

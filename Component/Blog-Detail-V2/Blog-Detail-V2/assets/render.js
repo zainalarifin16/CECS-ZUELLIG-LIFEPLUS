@@ -34,11 +34,15 @@ define([
 				
                 var template,
                     content = $.extend({}, this.contentItemData),
-                    contentType;
+                    contentClient = this.contentClient,
+                    contentType,
+                    secureContent,
+                    params;
 
                 if (this.scsData) {
                     content = $.extend(content, { 'scsData': this.scsData });
                     contentType = content.scsData.showPublishedContent === true ? 'published' : 'draft';
+                    secureContent = content.scsData.secureContent;
                 }
 
                 console.log("blog detail", content.data);
@@ -52,7 +56,7 @@ define([
 				//get author
 				content.author = content.data["blog-postv3_author"];
 				// Get formatted date
-                content.formattedDate = dateToMDY(content.updateddate);
+                content.formattedDate = dateToMDY(content.data["blog-postv3_date"]);
 				//get category post
 				content.category_post = content.data["blog-postv3_category_post"];
 				//get title
@@ -63,6 +67,20 @@ define([
 				content.image_header = content.data["blog-postv3_media_post"][0];
 				content.image_1  = content.data["blog-postv3_media_post"][1];
 				content.image_2  = content.data["blog-postv3_media_post"][2];
+
+				params = {
+                    'contentType': contentType,
+                    'secureContent': secureContent
+                };
+
+                params["itemGUID"] = ( typeof content.data["blog-postv3_media_post"][0] == 'string' ) ? content.data["blog-postv3_media_post"][0] : content.data["blog-postv3_media_post"][0].id;
+                content.image_header = contentClient.getRenditionURL(params);
+                params["itemGUID"] = ( typeof content.data["blog-postv3_media_post"][1] == 'string' ) ? content.data["blog-postv3_media_post"][1] : content.data["blog-postv3_media_post"][1].id;
+                content.image_1 = contentClient.getRenditionURL(params);
+                params["itemGUID"] = ( typeof content.data["blog-postv3_media_post"][2] == 'string' ) ? content.data["blog-postv3_media_post"][2] : content.data["blog-postv3_media_post"][2].id;
+                content.image_2 = contentClient.getRenditionURL(params);
+
+
 
 				
                 // Append HTML to DOM
@@ -75,13 +93,6 @@ define([
         }
 
 	};
-
-	function dateToMDY(date) {
-        var dateObj = new Date(date.value);
-        var options = {year: 'numeric', month: 'long', day: 'numeric'};
-        var formattedDate = dateObj.toLocaleDateString('en-US', options);
-        return formattedDate;
-    }
 
 	return ContentLayout;
 });
