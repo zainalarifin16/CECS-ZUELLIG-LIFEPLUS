@@ -1,4 +1,4 @@
-@media (min-width:1281px) { 
+@media (min-width:1280px) { 
 
     /* CAROUSEL */
 
@@ -14,7 +14,6 @@
 
     .carousel_text_1{
       font-size: 66px;
-      margin-top: 94px;
     }
 
     .carousel_text_2{

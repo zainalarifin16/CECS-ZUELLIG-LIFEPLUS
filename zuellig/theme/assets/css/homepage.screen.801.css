@@ -40,6 +40,12 @@
 
 }
 
+@media (min-width:900px) {
+	.carousel_image {
+		min-width: 885px;
+	}
+}
+
 @media (min-width:980px)  { 
 /* tablet, landscape iPad, lo-res laptops ands desktops */ 
 	
@@ -49,6 +55,10 @@
 
 	.custom-container-explainer{
 		min-width: auto;
+	}
+
+	.carousel_image {
+	    min-width: 965px;
 	}
 
 }

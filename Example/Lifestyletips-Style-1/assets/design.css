@@ -1,0 +1,40 @@
+.scs-cl-default-layout {
+	font-family: 'Helvetica Neue', 'Segoe UI', sans-serif-regular, Helvetica, Arial;
+	font-size: 16px;
+	margin:0px;
+	padding:0px;
+	font-style: normal;
+	color: #333;
+}
+
+.scs-cl-default-layout li {
+	list-style: none;
+ 	font-size: 14px; 
+	font-style: normal;
+	font-variant-caps: normal;
+	color: #333;
+	font-weight: 200;
+	margin: 0em 0em 1em 0em;
+}
+
+.scs-cl-default-layout img {
+	width: 100%;
+	max-width: 190px;
+	margin:0px;
+	border-radius: 3px;
+}
+.scs-cl-default-layout h1 {
+	font-size: 24px;
+	color: #333;
+	margin:0px;
+	font-weight:300;
+}
+.scs-cl-default-layout h2 {
+	font-size: 18px;
+	color: #767676;
+	margin:0px;
+	font-weight:300;
+}
+.scs-cl-default-layout p {
+	margin:0px;
+}

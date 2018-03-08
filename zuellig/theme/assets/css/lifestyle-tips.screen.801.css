@@ -1,0 +1,9 @@
+@media (min-width: 800px) {
+  #image-lifestyletips,
+  #breadcrumb,
+  #title-lifestyletips-post,
+  #lifestyletips-post,
+  #subscriber {
+    max-width: 1200px;
+  }
+}

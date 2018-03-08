@@ -1,0 +1,129 @@
+/* start image lifestyletips page */
+#image-lifestyletips {
+  height: 200px;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#image-lifestyletips .scs-image .scs-image-image {
+  height: 200px;
+}
+/* end image lifestyletips page */
+
+/* start breadcrumb */
+#breadcrumb {
+  height: 55px;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+/* end breadcrumb */
+
+/* start lifestyletips post */
+#title-lifestyletips-post {
+  height: 41px;
+  max-width: 1280px;
+  margin: 0px auto;
+  margin-bottom: 25px;
+}
+
+#lifestyletips-post {
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+#lifestyletips-post .scs-paragraph {
+  display: none;
+  transition: 1s;
+}
+
+#lifestyletips-post .summary-card-title > div {
+  transition: 1s;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination {
+  margin: 20px;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #818383;
+  color: #FFF;
+  transition: 1s;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage.scs-disabled a,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage.scs-disabled a {
+  cursor: not-allowed;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber {
+  width: 40px;
+  height: 40px;
+  background-color: #818383;
+  color: #FFF;
+  margin: 0px 20px;
+  border-radius: 50%;
+  transition: 1s;
+  padding: 5px;
+}
+
+#lifestyletips-post .scs-contentlist ol.scs-pagination .prevPage:not(.scs-disabled):hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .nextPage:not(.scs-disabled):hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber:hover,
+#lifestyletips-post .scs-contentlist ol.scs-pagination .pageNumber.scs-current {
+  background-color: #c2d62f
+}
+/* end lifestyletips post */
+
+/* start subscriber */
+#subscriber {
+  height: 100px;
+  background-color: #006062;
+  margin-bottom: 14px;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 10px 0px 36px 108px;
+}
+
+#subscriber .scs-title {
+  width: 457px;
+  height: 54px;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+#subscriber .scs-search-input {
+  padding: 8px;
+}
+
+#subscriber .scs-button .scs-button-button {
+  padding: 10px;
+  width: 137px;
+  height: 40px;
+  background-color: #c2d62f;
+}
+
+#subscriber .scs-button .scs-button-text {
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #006062;
+}
+/* end subscriber */
